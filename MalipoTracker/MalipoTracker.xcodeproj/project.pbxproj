@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8228D7E225DF0A22003379A7 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E125DF0A22003379A7 /* CalendarPicker.swift */; };
+		8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E425DF0DC8003379A7 /* GriStack.swift */; };
 		82581D5A25DDBBBD006FACB3 /* MalipoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82581D5925DDBBBD006FACB3 /* MalipoTrackerApp.swift */; };
 		82581D5C25DDBBBD006FACB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82581D5B25DDBBBD006FACB3 /* ContentView.swift */; };
 		82581D5E25DDBBBE006FACB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82581D5D25DDBBBE006FACB3 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		8228D7E125DF0A22003379A7 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
+		8228D7E425DF0DC8003379A7 /* GriStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriStack.swift; sourceTree = "<group>"; };
 		82581D5625DDBBBD006FACB3 /* MalipoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MalipoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82581D5925DDBBBD006FACB3 /* MalipoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalipoTrackerApp.swift; sourceTree = "<group>"; };
 		82581D5B25DDBBBD006FACB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				82B7A82625DDC6BB0058AA22 /* HomeView.swift */,
 				82B7A82E25DDD6220058AA22 /* EventDetailView.swift */,
 				8228D7E125DF0A22003379A7 /* CalendarPicker.swift */,
+				8228D7E425DF0DC8003379A7 /* GriStack.swift */,
 				8285B52325DEF13500201F89 /* Extensions.swift */,
 				8285B52625DEF4A000201F89 /* SenderModalView.swift */,
 				82581D5D25DDBBBE006FACB3 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8285B52425DEF13500201F89 /* Extensions.swift in Sources */,
+				8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */,
 				82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */,
 				82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */,
 				82581D5C25DDBBBD006FACB3 /* ContentView.swift in Sources */,
