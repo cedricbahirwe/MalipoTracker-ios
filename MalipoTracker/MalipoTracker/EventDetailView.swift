@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+extension Color {
+    static let bgColor = Color(.label)
+    
+    static let fgColor = Color(.systemBackground)
+}
+
 let size = UIScreen.main.bounds.size
 struct EventDetailView: View {
     
@@ -32,14 +38,16 @@ struct EventDetailView: View {
                     })
                 }
                 .padding(.horizontal)
-
-                Text("Rememeber to pay rent for December ")
-                    .font(.system(size: 23, weight: .bold))
+                
+                Text("Remember to pay rent for December ")
+                    .font(.title)
+                    .fontWeight(.bold)
                     .padding(.horizontal)
-
+                    .frame(maxHeight: .infinity)
+                
             }
             .foregroundColor(Color.white.opacity(0.65))
-            .frame(height: 160, alignment: .top)
+            .frame(height: 190, alignment: .top)
             .background(
                 ZStack {
                     Color.black
@@ -78,9 +86,9 @@ struct EventDetailView: View {
                     Text("Urgent")
                         .font(.system(size: 10, weight: .medium))
                         .foregroundColor(Color(.systemBackground))
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(Color(.label))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(Color.bgColor)
                         .cornerRadius(8)
                 }
                 .padding()
@@ -113,7 +121,8 @@ struct EventDetailView: View {
                     
                     VStack(alignment: .leading, spacing: 15) {
                         Text("Description")
-                            .font(.system(size: 13, weight: .medium))
+                            .font(.title)
+                            .fontWeight(.medium)
                         Text("It looks a little like Latin, but the words are all weird and meaningless. It's a classic that has been around since at least the 1960s. But there's a problem. It's boring. It's a classic that has been around since at least the end.")
                             .font(.system(size: 16, weight: .light))
                             .foregroundColor(.gray)
@@ -124,7 +133,9 @@ struct EventDetailView: View {
                     
                     VStack(alignment: .leading, spacing: 15) {
                         Text("Assigned to:")
-                            .font(.system(size: 13, weight: .medium))
+                            .font(.title)
+                            .fontWeight(.medium)
+                        
                         HStack {
                             ForEach(0 ..< 5) { i in
                                 Image("\(i+1)")
@@ -140,11 +151,17 @@ struct EventDetailView: View {
                     Spacer()
                 }
                 .padding()
-                .background(Color(.systemBackground).ignoresSafeArea(.all))
-                .cornerRadius(12)
+                .background(
+                    Color(.systemBackground)
+                        .cornerRadius(12, corners: [.topLeft, .topRight])
+                        .ignoresSafeArea(.all)
+                )
             }
-            .background(Color(.secondarySystemBackground).ignoresSafeArea(.all))
-            .cornerRadius(12)
+            .background(
+                Color(.secondarySystemBackground)
+                    .cornerRadius(12, corners: [.topLeft, .topRight])
+                    .ignoresSafeArea(.all)
+            )
         }
         .background(Color.black.ignoresSafeArea(.all))
         .navigationTitle("")
