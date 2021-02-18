@@ -48,27 +48,47 @@ struct CalendarPicker: View {
 struct TimePicker: View {
     var body: some View {
         VStack(spacing: -20) {
-            TimePicker()
             Color.black.opacity(0.6)
                 .ignoresSafeArea(edges: .all)
             
-            GridStack(rows: 4, columns: 3) { row, column in
-                Text(labelAt(row, column))
-                    .font(.system(size: 20))
-                    .fontWeight(.light)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 35)
-                    .overlay(
-                        Capsule()
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .padding(5)
+            VStack {
+                Capsule()
+                    .fill(Color.gray.opacity(0.2))
+                    .frame(width: 50, height: 5)
+                    .padding(.vertical, 5)
+                GridStack(rows: 5, columns: 3) { row, column in
+                    Text(labelAt(row, column))
+                        .font(.system(size: 20))
+                        .fontWeight(.light)
+                        .foregroundColor(
+                            indexAt(row, column) == 7 ?
+                                Color.fgColor :
+                                Color.bgColor
+                        )
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 35)
+                        .background(
+                            ZStack {
+                                if  indexAt(row, column) == 7  {
+                                    Color.blue
+                                        .overlay(Color.blue)
+                                        .clipShape(Capsule())
+                                } else {
+                                    Capsule()
+                                        .stroke(Color.gray, lineWidth: 0.5)
+                                }
+                            }
+                        )
+                        .padding(5)
+                }
+                
             }
+            .padding()
             .background(
                 Color.fgColor
                     .cornerRadius(20, corners: [.topLeft, .topRight])
                     .edgesIgnoringSafeArea(.bottom)
-            )
+        )
         }
         
     }
