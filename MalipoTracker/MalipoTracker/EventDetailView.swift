@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-extension Color {
-    static let bgColor = Color(.label)
-    
-    static let fgColor = Color(.systemBackground)
-}
-
 let size = UIScreen.main.bounds.size
 struct EventDetailView: View {
     
