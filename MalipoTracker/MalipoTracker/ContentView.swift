@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            HomeView()
-                .navigationTitle("")
-                .navigationBarHidden(true)
-        }
+        TestingView()
+//        NavigationView {
+//            HomeView()
+//                .navigationTitle("")
+//                .navigationBarHidden(true)
+//        }
     }
 }
 
