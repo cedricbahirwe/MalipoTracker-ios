@@ -89,7 +89,7 @@ struct HomeView: View {
                     .padding(.top, 5)
                 }
                 .padding(10)
-                .frame(width: 250, height: 90, alignment: .leading)
+                .frame(width: 300, height: 90, alignment: .leading)
                 .background(Color(.label))
                 .cornerRadius(10)
                 .contentShape(Rectangle())
@@ -131,6 +131,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environment(\.colorScheme, .dark)
     }
 }
 
