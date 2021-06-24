@@ -19,6 +19,7 @@
 		8285B52725DEF4A000201F89 /* SenderModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8285B52625DEF4A000201F89 /* SenderModalView.swift */; };
 		82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7A82625DDC6BB0058AA22 /* HomeView.swift */; };
 		82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7A82E25DDD6220058AA22 /* EventDetailView.swift */; };
+		82E4B2522670CAD40034A7E3 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E4B2512670CAD40034A7E3 /* Dummy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8285B52625DEF4A000201F89 /* SenderModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderModalView.swift; sourceTree = "<group>"; };
 		82B7A82625DDC6BB0058AA22 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		82B7A82E25DDD6220058AA22 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		82E4B2512670CAD40034A7E3 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				826EC09925E02CAB001B77EC /* TimerPicker.swift */,
 				8228D7E425DF0DC8003379A7 /* GriStack.swift */,
 				8285B52325DEF13500201F89 /* Extensions.swift */,
+				82E4B2512670CAD40034A7E3 /* Dummy.swift */,
 				8285B52625DEF4A000201F89 /* SenderModalView.swift */,
 				82581D5D25DDBBBE006FACB3 /* Assets.xcassets */,
 				82581D6225DDBBBE006FACB3 /* Info.plist */,
@@ -164,6 +167,7 @@
 			files = (
 				8285B52425DEF13500201F89 /* Extensions.swift in Sources */,
 				826EC0B025E0427C001B77EC /* TestingView.swift in Sources */,
+				82E4B2522670CAD40034A7E3 /* Dummy.swift in Sources */,
 				8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */,
 				82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */,
 				82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */,
