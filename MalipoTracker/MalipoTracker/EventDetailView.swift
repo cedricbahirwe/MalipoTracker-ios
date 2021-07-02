@@ -12,7 +12,7 @@ struct EventDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    let event: Event? = nil
+    let event: MTEvent? = nil
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading) {

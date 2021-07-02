@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
     @State private var goToEventDetails = false
     @StateObject var dateProvider: DateProvider = DateProvider()
@@ -102,6 +101,7 @@ struct HomeView: View {
                 .onTapGesture {
                     goToEventDetails = true
                 }
+                
                 
                 Spacer()
                 

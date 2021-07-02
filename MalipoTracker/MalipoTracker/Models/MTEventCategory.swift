@@ -12,6 +12,6 @@ struct MTEventCategory: Codable, Identifiable {
     var name: String
     var description: String? = nil
     
-    static let `default`  = EventCategory(name: "Rent", description: nil)
+    static let `default`  = MTEventCategory(name: "Rent",
+                                            description: nil)
 }
-

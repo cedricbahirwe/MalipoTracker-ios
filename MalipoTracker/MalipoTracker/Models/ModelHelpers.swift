@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum EventStatus: String, Codable {
+enum MTEventStatus: String, Codable {
     case completed, pending, extended, canceled
 }
-enum EventRepetition: String, Codable {
+enum MTEventRepetition: String, Codable {
     case daily, weekly, monthly, yearly
 }
 enum Month: Int {

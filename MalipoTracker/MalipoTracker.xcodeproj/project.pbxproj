@@ -79,8 +79,8 @@
 		823F20D0268FA0D100EFC8F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				823F20D1268FA0DE00EFC8F6 /* MTContact.swift */,
 				823F20D5268FA0F400EFC8F6 /* MTEvent.swift */,
+				823F20D1268FA0DE00EFC8F6 /* MTContact.swift */,
 				823F20D8268FA10600EFC8F6 /* MTEventCategory.swift */,
 				823F20DB268FA11A00EFC8F6 /* ModelHelpers.swift */,
 			);
