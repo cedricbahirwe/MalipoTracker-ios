@@ -7,24 +7,7 @@
 
 import SwiftUI
 
-enum Month: Int {
-    case jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
-}
 
-struct Event: Codable, Identifiable {
-    var id = UUID()
-    var name: String = ""
-    var createdAt = ""
-    var updatedAt = ""
-    
-    var formattedCreatedAt: String {
-        return createdAt
-    }
-    
-    var formattedUpdatedAt: String {
-        return updatedAt
-    }
-}
 struct HomeView: View {
     @State private var goToEventDetails = false
     @StateObject var dateProvider: DateProvider = DateProvider()
@@ -53,6 +36,10 @@ struct HomeView: View {
                             .frame(width: 35, height: 35)
                         
                     }
+                    Image(systemName: "square.grid.3x3.fill")
+                        .resizable()
+                        .padding(8)
+                        .frame(width: 35, height: 35)
                     Image("2")
                         .resizable()
                         .frame(width: 35, height: 35)
@@ -80,7 +67,7 @@ struct HomeView: View {
                                 Color(.secondarySystemBackground)
                                     .opacity(index != 2 ? 0 : 1)
                             )
-                             .cornerRadius(15)
+                            .cornerRadius(15)
                         }
                     }
                 }
@@ -96,7 +83,7 @@ struct HomeView: View {
                     }
                     .font(.system(size: 12, weight: .medium))
                     .foregroundColor(.gray)
-
+                    
                     HStack {
                         ForEach(0 ..< 4) { i in
                             Image("\(i+1)")
@@ -113,9 +100,9 @@ struct HomeView: View {
                 .cornerRadius(10)
                 .contentShape(Rectangle())
                 .onTapGesture {
-                     goToEventDetails = true
+                    goToEventDetails = true
                 }
-          
+                
                 Spacer()
                 
                 HStack {
@@ -146,7 +133,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-//            .preferredColorScheme(.dark)
+        //            .preferredColorScheme(.dark)
     }
 }
 
