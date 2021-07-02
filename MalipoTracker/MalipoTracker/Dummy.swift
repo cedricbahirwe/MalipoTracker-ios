@@ -30,7 +30,7 @@ struct Dummy: View {
                         )
                             .onTapGesture{
                                 print(days[i])
-                                // this is just for replacing the current selection
+                                // This is just for replacing the current selection
                                 for j in days.indices { days[j].isToday = false }
                                 days[i].isToday = true
                             }

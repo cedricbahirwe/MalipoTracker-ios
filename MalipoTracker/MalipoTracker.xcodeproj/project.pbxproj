@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82096A78268F64240018E468 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82096A77268F64240018E468 /* DataProvider.swift */; };
 		8228D7E225DF0A22003379A7 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E125DF0A22003379A7 /* CalendarPicker.swift */; };
 		8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E425DF0DC8003379A7 /* GriStack.swift */; };
 		82581D5A25DDBBBD006FACB3 /* MalipoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82581D5925DDBBBD006FACB3 /* MalipoTrackerApp.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82096A77268F64240018E468 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		8228D7E125DF0A22003379A7 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
 		8228D7E425DF0DC8003379A7 /* GriStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriStack.swift; sourceTree = "<group>"; };
 		82581D5625DDBBBD006FACB3 /* MalipoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MalipoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82096A76268F64160018E468 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82096A77268F64240018E468 /* DataProvider.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		82581D4D25DDBBBD006FACB3 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 				82B7A82E25DDD6220058AA22 /* EventDetailView.swift */,
 				8228D7E125DF0A22003379A7 /* CalendarPicker.swift */,
 				826EC0AF25E0427C001B77EC /* TestingView.swift */,
+				82096A76268F64160018E468 /* ViewModel */,
 				826EC09925E02CAB001B77EC /* TimerPicker.swift */,
 				8228D7E425DF0DC8003379A7 /* GriStack.swift */,
 				8285B52325DEF13500201F89 /* Extensions.swift */,
@@ -171,6 +182,7 @@
 				8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */,
 				82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */,
 				82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */,
+				82096A78268F64240018E468 /* DataProvider.swift in Sources */,
 				826EC09A25E02CAB001B77EC /* TimerPicker.swift in Sources */,
 				82581D5C25DDBBBD006FACB3 /* ContentView.swift in Sources */,
 				82581D5A25DDBBBD006FACB3 /* MalipoTrackerApp.swift in Sources */,
@@ -306,7 +318,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MalipoTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				DEVELOPMENT_TEAM = 9C9R36NYWY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MalipoTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -330,7 +342,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MalipoTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				DEVELOPMENT_TEAM = 9C9R36NYWY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MalipoTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

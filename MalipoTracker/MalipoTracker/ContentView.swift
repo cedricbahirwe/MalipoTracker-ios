@@ -6,126 +6,96 @@
 //
 
 import SwiftUI
-
-struct DateType {
-    var day: String
-    var date: String
-    var year: String
-    var month: String
+enum Month: Int {
+    case jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
 }
-
-
 struct ContentView: View {
-    @State var data: DateType = DateType(day: "", date: "", year: "", month: "")
-    @ObservedObject var dateProvider: DateProvider = DateProvider()
-    var body: some View {
-        ScrollView {
-            VStack {
+    
+    @State var selectedMonth: Month = .jul
+    private let width = UIScreen.main.bounds.size.width
 
-                VStack {
-                    Text(dateProvider.dateData.day)
-                    Text(dateProvider.dateData.date)
-                    Text(dateProvider.dateData.month)
-                    Text(dateProvider.dateData.year)
-                        
-                    VStack {
-                        ForEach(dateProvider.months.indices, id: \.self) { index in
-                            Text("\(dateProvider.months[index])")
-                            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
-                                ForEach(1 ..< dateProvider.getNumbersOfMonths(month: index + 1, year: 2021)) { item in
-                                    VStack {
-                                        Text("\(item)")
-                                        Text(dateProvider.getDayName(month: index+1, day: item))
-                                            .foregroundColor(.red)
-                                    }
+//    @State var data: DateType = DateType.init()
+    @ObservedObject var dateProvider: DateProvider = DateProvider()
+    @State private var offsetX: CGFloat = .zero
+    
+    var body: some View {
+        VStack {
+            Text(dateProvider.dateData.firstDDMY).bold()
+            HStack {
+                ForEach(days(), id:\.self) { day in
+                    Text(day)
+                        .font(.caption)
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            
+            GeometryReader { geo in
+                HStack(spacing: 0) {
+                    
+                    ForEach(dateProvider.months.indices, id: \.self) { index in
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
+                            ForEach(1 ..< dateProvider.getNumbersOfMonths(month: index + 1, year: 2021)) { item in
+                                ZStack {
+                                    Circle()
+                                        .stroke(Color.primary)
+                                    Text("\(item)")
+                                        .padding(5)
                                 }
                             }
-                            .padding(.vertical)
                         }
+                        .padding(.vertical)
+//
                     }
+                    .frame(width: geo.frame(in: .global).width)
+                    .background(Color.red)
                 }
-                
+                .offset(x: offsetX)
+                .highPriorityGesture(
+                    DragGesture()
+                        .onEnded(updateTabs)
+                )
+            }
+            .animation(.default)
+        }
+        .onChange(of: selectedMonth, perform: updateLayout)
+    }
+    
+    func days() -> [String] {
+        let symbols = DateFormatter().shortWeekdaySymbols!
+        return Array(symbols[1..<symbols.count]) + symbols[0..<1]
+    }
+    
+    public func updateTabs(with swipeValue: DragGesture.Value) {
+            print("Saping")
+        if (-swipeValue.translation.width > 50)  {
+            
+            if let newMonth = Month(rawValue: selectedMonth.rawValue+1) {
+                selectedMonth = newMonth
+            }
+        }
+
+        if (swipeValue.translation.width > 50) {
+            if let newMonth = Month(rawValue: selectedMonth.rawValue-1) {
+                selectedMonth = newMonth
             }
         }
     }
+    private func updateLayout(tab: Month) {
+        offsetX = -(width*CGFloat(tab.rawValue-1))
+//        switch tab {
+//        case .foryou:
+//            offsetX = - (width*tab.rawValue-1)
+//        case .notification:
+//            offsetX = -width
+//        case .topics:
+//            offsetX = -width*2
+//        }
+    }
 }
-
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-class DateProvider: ObservableObject {
-    
-    @Published var months: [String] = []
-    @Published var dateData: DateType = DateType(day: "", date: "", year: "", month: "")
-    
-    init() {
-        months = getMonths()
-        dateData = getCurrentDate()
-    }
-    
-    func getDayName(month: Int, day: Int, year: Int = 2021) -> String {
-        // Specify date components
-        let dateComponents = DateComponents(year: year, month: month, day: day)
-
-        let userCalendar = Calendar(identifier: .gregorian) // since the components above (like year 2021) are for Gregorian
-        // Create date from components
-        let someDateTime = userCalendar.date(from: dateComponents)
-        if let foundDate = someDateTime {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "E" // This refers to `day of week`
-            let dateString = dateFormatter.string(from: foundDate)
-            let formattedString = dateString
-            return formattedString
-        }
-        
-        // This should normally not occur
-        return "UnKnown"
-    }
-    
-    func getCurrentDate() -> DateType {
-        let date = Date()
-        var currentDate = Calendar.current
-        currentDate.locale = NSLocale(localeIdentifier: "en_EN") as Locale
-        let dateString = currentDate.component(.day, from: date)
-        let monthNo = currentDate.component(.month, from: date)
-        let month = currentDate.monthSymbols[monthNo - 1]
-        let year = currentDate.component(.year, from: date)
-        let weekNo = currentDate.component(.weekday, from: date)
-        let day = currentDate.weekdaySymbols[weekNo - 1]
-        return DateType(day: "\(day)", date: "\(dateString)", year: "\(year)", month: "\(month)")
-    }
-    
-    func getDayName(from date: Int) -> DateType {
-        let date = Date()
-        var currentDate = Calendar.current
-        currentDate.locale = NSLocale(localeIdentifier: "en_EN") as Locale
-        let dateString = currentDate.component(.day, from: date)
-        let monthNo = currentDate.component(.month, from: date)
-        let month = currentDate.monthSymbols[monthNo - 1]
-        let year = currentDate.component(.year, from: date)
-        let weekNo = currentDate.component(.weekday, from: date)
-        let day = currentDate.weekdaySymbols[weekNo - 1]
-        return DateType(day: "\(day)", date: "\(dateString)", year: "\(year)", month: "\(month)")
-    }
-    
-    func getMonths() -> [String] {
-        let formatter = DateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "en_EN") as Locale
-        let monthComponents = formatter.shortMonthSymbols ?? []
-        return monthComponents
-    }
-    
-    func getNumbersOfMonths(month: Int, year: Int) -> Int {
-        let dateComponents = DateComponents(year: year, month: month)
-        let calendar = Calendar.current
-        let date = calendar.date(from: dateComponents)!
-        let range = calendar.range(of: .day, in: .month, for: date)!
-        let numDays = range.count
-        return numDays + 1
     }
 }
