@@ -6,9 +6,7 @@
 //
 
 import SwiftUI
-enum Month: Int {
-    case jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
-}
+
 struct ContentView: View {
     
     @State var selectedMonth: Month = .jul

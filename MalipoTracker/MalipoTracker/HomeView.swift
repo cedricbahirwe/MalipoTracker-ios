@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum Month: Int {
+    case jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+}
+
 struct Event: Codable, Identifiable {
     var id = UUID()
     var name: String = ""
@@ -23,6 +27,8 @@ struct Event: Codable, Identifiable {
 }
 struct HomeView: View {
     @State private var goToEventDetails = false
+    @StateObject var dateProvider: DateProvider = DateProvider()
+    @State private var currentMonth: Month = .jul
     var body: some View {
         ZStack {
             Group {
@@ -57,19 +63,24 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(0..<10) { i in
-                            VStack(spacing: 2) {
-                                Text("Wed")
+                        ForEach(1 ..< dateProvider.getNumbersOfMonths(month: currentMonth.rawValue, year: 2021)) { index in
+                            VStack {
+                                
+                                Text(dateProvider.getDayName(month: currentMonth.rawValue, day: index))
                                     .font(.system(size: 12, weight: .light))
                                     .foregroundColor(Color(.secondaryLabel))
-                                Text("\(i*17)")
+                                Text("\(index)")
                                     .font(.subheadline)
                                     .fontWeight(.bold)
                             }
-                            .padding(.horizontal, 12)
+                            .padding(.horizontal, 5)
+                            .frame(minWidth: 50)
                             .frame(height: 60)
-                            .background(Color(.secondarySystemBackground).opacity(i != 2 ? 0 : 1))
-                            .cornerRadius(15)
+                            .background(
+                                Color(.secondarySystemBackground)
+                                    .opacity(index != 2 ? 0 : 1)
+                            )
+                             .cornerRadius(15)
                         }
                     }
                 }
