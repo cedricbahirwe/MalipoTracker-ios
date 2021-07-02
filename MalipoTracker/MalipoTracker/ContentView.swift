@@ -29,32 +29,32 @@ struct ContentView: View {
                 }
             }
             
-            GeometryReader { geo in
-                HStack(spacing: 0) {
-                    
-                    ForEach(dateProvider.months.indices, id: \.self) { index in
-                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
-                            ForEach(1 ..< dateProvider.getNumbersOfMonths(month: index + 1, year: 2021)) { item in
-                                ZStack {
-                                    Circle()
-                                        .stroke(Color.primary)
-                                    Text("\(item)")
-                                        .padding(5)
-                                }
-                            }
-                        }
-                        .padding(.vertical)
-//
-                    }
-                    .frame(width: geo.frame(in: .global).width)
-                    .background(Color.red)
-                }
-                .offset(x: offsetX)
-                .highPriorityGesture(
-                    DragGesture()
-                        .onEnded(updateTabs)
-                )
-            }
+//            GeometryReader { geo in
+//                HStack(spacing: 0) {
+//                    
+//                    ForEach(dateProvider.months.indices, id: \.self) { index in
+//                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
+//                            ForEach(1 ..< dateProvider.getNumbersOfMonths(month: index + 1, year: 2021)) { item in
+//                                ZStack {
+//                                    Circle()
+//                                        .stroke(Color.primary)
+//                                    Text("\(item)")
+//                                        .padding(5)
+//                                }
+//                            }
+//                        }
+//                        .padding(.vertical)
+////
+//                    }
+//                    .frame(width: geo.frame(in: .global).width)
+//                    .background(Color.red)
+//                }
+//                .offset(x: offsetX)
+//                .highPriorityGesture(
+//                    DragGesture()
+//                        .onEnded(updateTabs)
+//                )
+//            }
             .animation(.default)
         }
         .onChange(of: selectedMonth, perform: updateLayout)
