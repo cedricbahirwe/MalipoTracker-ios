@@ -61,6 +61,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		823F20C7268F915700EFC8F6 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		82581D4D25DDBBBD006FACB3 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +90,7 @@
 				82581D5925DDBBBD006FACB3 /* MalipoTrackerApp.swift */,
 				82581D5B25DDBBBD006FACB3 /* ContentView.swift */,
 				82B7A82625DDC6BB0058AA22 /* HomeView.swift */,
+				823F20C7268F915700EFC8F6 /* Tabs */,
 				82B7A82E25DDD6220058AA22 /* EventDetailView.swift */,
 				8228D7E125DF0A22003379A7 /* CalendarPicker.swift */,
 				826EC0AF25E0427C001B77EC /* TestingView.swift */,

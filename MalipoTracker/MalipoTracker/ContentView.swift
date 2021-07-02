@@ -29,6 +29,34 @@ struct ContentView: View {
                 }
             }
             
+            ScrollView {
+                VStack {
+
+                    VStack {
+                        Text(dateProvider.dateData.day)
+                        Text(dateProvider.dateData.date)
+                        Text(dateProvider.dateData.month)
+                        Text(dateProvider.dateData.year)
+                            
+                        VStack {
+                            ForEach(dateProvider.months.indices, id: \.self) { index in
+                                Text("\(dateProvider.months[index])")
+                                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 10) {
+                                    ForEach(1 ..< dateProvider.getNumbersOfMonths(month: index + 1, year: 2021)) { item in
+                                        VStack {
+                                            Text("\(item)")
+                                            Text(dateProvider.getDayName(month: index+1, day: item))
+                                                .foregroundColor(.red)
+                                        }
+                                    }
+                                }
+                                .padding(.vertical)
+                            }
+                        }
+                    }
+                    
+                }
+            }
 //            GeometryReader { geo in
 //                HStack(spacing: 0) {
 //                    

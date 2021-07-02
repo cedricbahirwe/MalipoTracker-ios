@@ -38,7 +38,15 @@ struct HomeView: View {
                     }
                     
                     Spacer()
-                    
+                    HStack {
+                        TextField("", text: .constant(""))
+                        
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .padding(10)
+                            .frame(width: 35, height: 35)
+                        
+                    }
                     Image("2")
                         .resizable()
                         .frame(width: 35, height: 35)
@@ -70,7 +78,7 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 05) {
                     Text("Design Tasks Details")
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(Color(.systemBackground))
+                        .foregroundColor(.primary)
                     HStack {
                         Image(systemName: "clock")
                         Text("8:30 - 9:30")
@@ -90,39 +98,35 @@ struct HomeView: View {
                 }
                 .padding(10)
                 .frame(width: 300, height: 90, alignment: .leading)
-                .background(Color(.label))
+                .background(Color(.secondarySystemBackground))
                 .cornerRadius(10)
                 .contentShape(Rectangle())
                 .onTapGesture {
                      goToEventDetails = true
                 }
+          
                 Spacer()
+                
                 HStack {
-                    Image(systemName: "grid")
+                    Image(systemName: "house.fill")
+                        .imageScale(.large)
                     
                     Spacer()
                     
-                    ZStack {
-                        Capsule()
-                            .fill(Color(.systemBackground).opacity(0.9))
-                            .frame(width: 3, height: 13)
-                            .rotationEffect(.degrees(90))
-                        Capsule()
-                            .fill(Color(.systemBackground))
-                            .frame(width: 3, height: 13)
-                    }
-                    .frame(width: 40, height: 40)
-                    .background(Color(.label))
-                    .clipShape(Circle())
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
                     
                     Spacer()
-                    Image(systemName: "gear")
-                        .foregroundColor(.gray)
+                    Image(systemName: "chart.bar.xaxis")
+                        .imageScale(.large)
                     
                 }
                 .padding()
                 .padding(.horizontal, 20)
-                .background(Color(.secondarySystemBackground).opacity(0.1))
+                .background(Color(.secondarySystemGroupedBackground))
+                .clipShape(Capsule())
+                .padding(10)
             }
         }
     }
@@ -131,7 +135,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environment(\.colorScheme, .dark)
+//            .preferredColorScheme(.dark)
     }
 }
 
