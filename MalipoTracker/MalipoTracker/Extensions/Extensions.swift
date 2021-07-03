@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+struct RoundedCorner: Shape {
+    
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
 
 extension View {
     
@@ -20,25 +30,6 @@ extension View {
             .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }
 }
-
-
-struct RoundedCorner: Shape {
-    
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-struct Dot: View {
-    var body: some View {
-        Text("·").bold().scaleEffect(1.5)
-    }
-}
-
 
 extension Color {
     static let bgColor = Color(.label)
