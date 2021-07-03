@@ -36,15 +36,68 @@ struct EventCreationView: View {
             VStack(alignment: .leading) {
                 
                 VStack(alignment: .leading) {
-                    Text("Enter Event name")
-                        .fontWeight(.medium)
-                    TextField("title here", text: $event.title)
+                    TitleBold("Enter Event name")
+                    TextField("Title here", text: $event.title)
+                    Divider()
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("T Event name")
-                        .fontWeight(.medium)
-                    TextField("title here", text: $event.title)
+                    TitleBold("Category")
+                    HStack {
+                        Text("12:11 AM, Jul 3, 2021")
+                            .font(Font.callout.weight(.medium))
+                        Spacer()
+                        Image(systemName: "calendar.circle.fill")
+                            .imageScale(.large)
+                    }
+                    .foregroundColor(.primary)
+                    .padding(.vertical,2)
+                    Divider()
+                }
+                
+                VStack(alignment: .leading, spacing: 15) {
+                    TitleBold("Category")
+                    HStack(spacing: 15) {
+                        ForEach(MTEventCategory.Base.allCases, id: \.self) { category in
+                            Text(category.rawValue.capitalized)
+                                .font(.callout)
+                                .padding(.vertical, 5)
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    ZStack {
+                                        if category != .loan {
+                                            Capsule()
+                                                .stroke(Color.primary)
+                                        } else {
+                                            Capsule()
+                                                .fill(Color.primary)
+                                        }
+                                    }
+                                )
+                                .foregroundColor(category == .loan ? Color(.systemBackground) : .primary)
+                        }
+                    }
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 15) {
+                    TitleBold("Repetition")
+                    HStack {
+                        ForEach([Color.red, .green, .yellow, .purple, .orange],
+                                id:\.self) { color in
+                            ZStack {
+                                color
+                                    .frame(width: 30, height: 30)
+                                    .clipShape(Circle())
+                                if  color == .red  {
+                                    Image(systemName: "checkmark")
+                                        .imageScale(.small)
+                                        .foregroundColor(.white)
+                                }
+                            }
+                            
+                        }
+                    }
                 }
                 
             }
@@ -54,6 +107,12 @@ struct EventCreationView: View {
             
             Spacer()
         }
+//        .preferredColorScheme(.dark)
+    }
+    
+    @ViewBuilder
+    func TitleBold(_ value: String) -> some View {
+        Text(value).fontWeight(.medium)
     }
 }
 

@@ -11,6 +11,9 @@ import Foundation
 /// https://medium.com/@fruitcoder/codable-enum-with-associated-values-swift-4-e7d75d6f4370
 public enum MTEventCategory: Equatable {
     case rent , loan , custom(message: String)
+    public static var allCases: [MTEventCategory] {
+            return [.rent, .loan, .custom(message: "Custom")]
+        }
 }
 
 extension MTEventCategory: Codable {
@@ -18,7 +21,7 @@ extension MTEventCategory: Codable {
         case base, customMessage
     }
     
-    private enum Base: String, Codable {
+    public enum Base: String, Codable, CaseIterable {
         case  rent , loan , custom
     }
     
