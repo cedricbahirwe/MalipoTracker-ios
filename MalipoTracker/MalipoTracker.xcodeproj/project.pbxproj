@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8200C49B269067AD00087CC4 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200C49A269067AD00087CC4 /* SummaryView.swift */; };
+		8200C4A0269072AD00087CC4 /* GraphAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200C49F269072AD00087CC4 /* GraphAxis.swift */; };
+		8200C4A4269072BE00087CC4 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200C4A3269072BE00087CC4 /* HistoryRowView.swift */; };
 		82096A78268F64240018E468 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82096A77268F64240018E468 /* DataProvider.swift */; };
 		8228D7E225DF0A22003379A7 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E125DF0A22003379A7 /* CalendarPicker.swift */; };
 		8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E425DF0DC8003379A7 /* GriStack.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8200C49A269067AD00087CC4 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		8200C49F269072AD00087CC4 /* GraphAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphAxis.swift; sourceTree = "<group>"; };
+		8200C4A3269072BE00087CC4 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
 		82096A77268F64240018E468 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		8228D7E125DF0A22003379A7 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
 		8228D7E425DF0DC8003379A7 /* GriStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriStack.swift; sourceTree = "<group>"; };
@@ -61,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8200C49E2690729D00087CC4 /* View Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8200C49F269072AD00087CC4 /* GraphAxis.swift */,
+				8200C4A3269072BE00087CC4 /* HistoryRowView.swift */,
+			);
+			path = "View Helpers";
+			sourceTree = "<group>";
+		};
 		82096A76268F64160018E468 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +87,8 @@
 		823F20C7268F915700EFC8F6 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				82B7A82625DDC6BB0058AA22 /* HomeView.swift */,
+				8200C49A269067AD00087CC4 /* SummaryView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -108,10 +125,10 @@
 			children = (
 				82581D5925DDBBBD006FACB3 /* MalipoTrackerApp.swift */,
 				82581D5B25DDBBBD006FACB3 /* ContentView.swift */,
-				82B7A82625DDC6BB0058AA22 /* HomeView.swift */,
 				823F20C7268F915700EFC8F6 /* Tabs */,
 				82B7A82E25DDD6220058AA22 /* EventDetailView.swift */,
 				8228D7E125DF0A22003379A7 /* CalendarPicker.swift */,
+				8200C49E2690729D00087CC4 /* View Helpers */,
 				823F20D0268FA0D100EFC8F6 /* Models */,
 				826EC0AF25E0427C001B77EC /* TestingView.swift */,
 				82096A76268F64160018E468 /* ViewModel */,
@@ -206,6 +223,7 @@
 			files = (
 				823F20D9268FA10600EFC8F6 /* MTEventCategory.swift in Sources */,
 				823F20DC268FA11A00EFC8F6 /* ModelHelpers.swift in Sources */,
+				8200C4A4269072BE00087CC4 /* HistoryRowView.swift in Sources */,
 				8285B52425DEF13500201F89 /* Extensions.swift in Sources */,
 				826EC0B025E0427C001B77EC /* TestingView.swift in Sources */,
 				82E4B2522670CAD40034A7E3 /* Dummy.swift in Sources */,
@@ -215,7 +233,9 @@
 				82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */,
 				823F20D2268FA0DE00EFC8F6 /* MTContact.swift in Sources */,
 				82096A78268F64240018E468 /* DataProvider.swift in Sources */,
+				8200C49B269067AD00087CC4 /* SummaryView.swift in Sources */,
 				826EC09A25E02CAB001B77EC /* TimerPicker.swift in Sources */,
+				8200C4A0269072AD00087CC4 /* GraphAxis.swift in Sources */,
 				82581D5C25DDBBBD006FACB3 /* ContentView.swift in Sources */,
 				82581D5A25DDBBBD006FACB3 /* MalipoTrackerApp.swift in Sources */,
 				8285B52725DEF4A000201F89 /* SenderModalView.swift in Sources */,

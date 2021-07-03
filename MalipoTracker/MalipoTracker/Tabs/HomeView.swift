@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// - Payment Status
+/// - Snoozed? (Date and time)
 struct HomeView: View {
     @State private var goToEventDetails = false
     @StateObject var dateProvider: DateProvider = DateProvider()

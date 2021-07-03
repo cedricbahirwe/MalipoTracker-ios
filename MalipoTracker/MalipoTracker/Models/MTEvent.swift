@@ -7,6 +7,10 @@
 
 import Foundation
 
+public enum MTNotfication: String, CaseIterable, Codable {
+    case sms, email, whatsapp
+}
+
 struct MTEvent: Codable, Identifiable {
     var id = UUID()
     var title: String = ""
@@ -22,7 +26,7 @@ struct MTEvent: Codable, Identifiable {
     var updatedAt: Date = Date()
     var dueDate: Date = Date(timeIntervalSinceNow: 604800) // A week in seconds
     var dueTime: Date = Date() // This will be time only
-    
+    var notificationModes: [MTNotfication]
     
     var formattedCreatedAt: String {
         return createdAt.description
@@ -34,8 +38,8 @@ struct MTEvent: Codable, Identifiable {
     
     static let `default`  = MTEvent(montant: 2000,
                                     repetition: .weekly,
-                                    category: .default,
+                                    category: .rent,
                                     status: .pending,
                                     contact: .default,
-                                    customNote: "The is monthly rent for Himbi Apartments")
+                                    customNote: "The is monthly rent for Himbi Apartments", notificationModes: [.sms])
 }
