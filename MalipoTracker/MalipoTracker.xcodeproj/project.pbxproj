@@ -13,7 +13,6 @@
 		8200C4A8269077BA00087CC4 /* Calendar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200C4A7269077BA00087CC4 /* Calendar View.swift */; };
 		82096A78268F64240018E468 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82096A77268F64240018E468 /* DataProvider.swift */; };
 		8228D7E225DF0A22003379A7 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E125DF0A22003379A7 /* CalendarPicker.swift */; };
-		8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E425DF0DC8003379A7 /* GriStack.swift */; };
 		823F20D2268FA0DE00EFC8F6 /* MTContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F20D1268FA0DE00EFC8F6 /* MTContact.swift */; };
 		823F20D6268FA0F400EFC8F6 /* MTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F20D5268FA0F400EFC8F6 /* MTEvent.swift */; };
 		823F20D9268FA10600EFC8F6 /* MTEventCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F20D8268FA10600EFC8F6 /* MTEventCategory.swift */; };
@@ -22,8 +21,6 @@
 		82581D5C25DDBBBD006FACB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82581D5B25DDBBBD006FACB3 /* ContentView.swift */; };
 		82581D5E25DDBBBE006FACB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82581D5D25DDBBBE006FACB3 /* Assets.xcassets */; };
 		82581D6125DDBBBE006FACB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82581D6025DDBBBE006FACB3 /* Preview Assets.xcassets */; };
-		826EC09A25E02CAB001B77EC /* TimerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC09925E02CAB001B77EC /* TimerPicker.swift */; };
-		826EC0B025E0427C001B77EC /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC0AF25E0427C001B77EC /* TestingView.swift */; };
 		8285B52425DEF13500201F89 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8285B52325DEF13500201F89 /* Extensions.swift */; };
 		82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7A82625DDC6BB0058AA22 /* HomeView.swift */; };
 		82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7A82E25DDD6220058AA22 /* EventDetailView.swift */; };
@@ -36,7 +33,6 @@
 		8200C4A7269077BA00087CC4 /* Calendar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar View.swift"; sourceTree = "<group>"; };
 		82096A77268F64240018E468 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		8228D7E125DF0A22003379A7 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
-		8228D7E425DF0DC8003379A7 /* GriStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GriStack.swift; sourceTree = "<group>"; };
 		823F20D1268FA0DE00EFC8F6 /* MTContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTContact.swift; sourceTree = "<group>"; };
 		823F20D5268FA0F400EFC8F6 /* MTEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTEvent.swift; sourceTree = "<group>"; };
 		823F20D8268FA10600EFC8F6 /* MTEventCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTEventCategory.swift; sourceTree = "<group>"; };
@@ -47,8 +43,6 @@
 		82581D5D25DDBBBE006FACB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82581D6025DDBBBE006FACB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82581D6225DDBBBE006FACB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		826EC09925E02CAB001B77EC /* TimerPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPicker.swift; sourceTree = "<group>"; };
-		826EC0AF25E0427C001B77EC /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 		8285B52325DEF13500201F89 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		82B7A82625DDC6BB0058AA22 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		82B7A82E25DDD6220058AA22 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -129,11 +123,8 @@
 				8200C4A7269077BA00087CC4 /* Calendar View.swift */,
 				8200C49E2690729D00087CC4 /* View Helpers */,
 				823F20D0268FA0D100EFC8F6 /* Models */,
-				826EC0AF25E0427C001B77EC /* TestingView.swift */,
 				82096A76268F64160018E468 /* ViewModel */,
-				826EC09925E02CAB001B77EC /* TimerPicker.swift */,
-				8228D7E425DF0DC8003379A7 /* GriStack.swift */,
-				8285B52325DEF13500201F89 /* Extensions.swift */,
+				82EA8C1926908762006E7BE0 /* Extensions */,
 				82581D5D25DDBBBE006FACB3 /* Assets.xcassets */,
 				82581D6225DDBBBE006FACB3 /* Info.plist */,
 				82581D5F25DDBBBE006FACB3 /* Preview Content */,
@@ -147,6 +138,14 @@
 				82581D6025DDBBBE006FACB3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		82EA8C1926908762006E7BE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8285B52325DEF13500201F89 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,8 +221,6 @@
 				823F20DC268FA11A00EFC8F6 /* ModelHelpers.swift in Sources */,
 				8200C4A4269072BE00087CC4 /* HistoryRowView.swift in Sources */,
 				8285B52425DEF13500201F89 /* Extensions.swift in Sources */,
-				826EC0B025E0427C001B77EC /* TestingView.swift in Sources */,
-				8228D7E525DF0DC8003379A7 /* GriStack.swift in Sources */,
 				82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */,
 				823F20D6268FA0F400EFC8F6 /* MTEvent.swift in Sources */,
 				82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */,
@@ -231,7 +228,6 @@
 				8200C4A8269077BA00087CC4 /* Calendar View.swift in Sources */,
 				82096A78268F64240018E468 /* DataProvider.swift in Sources */,
 				8200C49B269067AD00087CC4 /* SummaryView.swift in Sources */,
-				826EC09A25E02CAB001B77EC /* TimerPicker.swift in Sources */,
 				8200C4A0269072AD00087CC4 /* GraphAxis.swift in Sources */,
 				82581D5C25DDBBBD006FACB3 /* ContentView.swift in Sources */,
 				82581D5A25DDBBBD006FACB3 /* MalipoTrackerApp.swift in Sources */,
