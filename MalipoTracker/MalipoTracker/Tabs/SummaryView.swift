@@ -49,6 +49,8 @@ struct SummaryView: View {
                     
                 }
                 .overlay(
+                    
+                    // To toggle between income and dus
                     Toggle("", isOn: .constant(true))
                         .toggleStyle(SwitchToggleStyle(tint: Color.red.opacity(0.8)))
                     , alignment: .topTrailing
