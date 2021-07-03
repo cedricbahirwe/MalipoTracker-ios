@@ -25,6 +25,9 @@ struct EventDetailView: View {
                             .padding([.vertical, .trailing], 10)
                     })
                     Spacer()
+                    Text("Event Detail")
+                        .bold()
+                    Spacer()
                     Button(action: {}, label: {
                         Image(systemName: "gear")
                             .imageScale(.large)
@@ -166,5 +169,6 @@ struct EventDetailView: View {
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         EventDetailView()
+//            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
