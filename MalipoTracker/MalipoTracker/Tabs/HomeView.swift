@@ -7,22 +7,16 @@
 
 import SwiftUI
 
-struct Event: Codable, Identifiable {
-    var id = UUID()
-    var name: String = ""
-    var createdAt = ""
-    var updatedAt = ""
-    
-    var formattedCreatedAt: String {
-        return createdAt
-    }
-    
-    var formattedUpdatedAt: String {
-        return updatedAt
-    }
+public enum MainTab {
+    case home , summary, creation
 }
+
+/// - Payment Status
+/// - Snoozed? (Date and time)
 struct HomeView: View {
     @State private var goToEventDetails = false
+    @StateObject var dateProvider: DateProvider = DateProvider()
+    @State private var currentMonth: Month = .jul
     var body: some View {
         ZStack {
             Group {
@@ -38,7 +32,19 @@ struct HomeView: View {
                     }
                     
                     Spacer()
-                    
+                    HStack {
+                        TextField("", text: .constant(""))
+                        
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .padding(10)
+                            .frame(width: 35, height: 35)
+                        
+                    }
+                    Image(systemName: "square.grid.3x3.fill")
+                        .resizable()
+                        .padding(8)
+                        .frame(width: 35, height: 35)
                     Image("2")
                         .resizable()
                         .frame(width: 35, height: 35)
@@ -49,18 +55,23 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(0..<10) { i in
-                            VStack(spacing: 2) {
-                                Text("Wed")
+                        ForEach(1 ..< dateProvider.getNumbersOfMonths(month: currentMonth.rawValue, year: 2021)) { index in
+                            VStack {
+                                
+                                Text(dateProvider.getDayName(month: currentMonth.rawValue, day: index))
                                     .font(.system(size: 12, weight: .light))
                                     .foregroundColor(Color(.secondaryLabel))
-                                Text("\(i*17)")
+                                Text("\(index)")
                                     .font(.subheadline)
                                     .fontWeight(.bold)
                             }
-                            .padding(.horizontal, 12)
+                            .padding(.horizontal, 5)
+                            .frame(minWidth: 50)
                             .frame(height: 60)
-                            .background(Color(.secondarySystemBackground).opacity(i != 2 ? 0 : 1))
+                            .background(
+                                Color(.secondarySystemBackground)
+                                    .opacity(index != 2 ? 0 : 1)
+                            )
                             .cornerRadius(15)
                         }
                     }
@@ -70,14 +81,14 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 05) {
                     Text("Design Tasks Details")
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(Color(.systemBackground))
+                        .foregroundColor(.primary)
                     HStack {
                         Image(systemName: "clock")
                         Text("8:30 - 9:30")
                     }
                     .font(.system(size: 12, weight: .medium))
                     .foregroundColor(.gray)
-
+                    
                     HStack {
                         ForEach(0 ..< 4) { i in
                             Image("\(i+1)")
@@ -90,40 +101,19 @@ struct HomeView: View {
                 }
                 .padding(10)
                 .frame(width: 300, height: 90, alignment: .leading)
-                .background(Color(.label))
+                .background(Color(.secondarySystemBackground))
                 .cornerRadius(10)
                 .contentShape(Rectangle())
                 .onTapGesture {
-                     goToEventDetails = true
+                    goToEventDetails = true
                 }
+                
+                
                 Spacer()
-                HStack {
-                    Image(systemName: "grid")
-                    
-                    Spacer()
-                    
-                    ZStack {
-                        Capsule()
-                            .fill(Color(.systemBackground).opacity(0.9))
-                            .frame(width: 3, height: 13)
-                            .rotationEffect(.degrees(90))
-                        Capsule()
-                            .fill(Color(.systemBackground))
-                            .frame(width: 3, height: 13)
-                    }
-                    .frame(width: 40, height: 40)
-                    .background(Color(.label))
-                    .clipShape(Circle())
-                    
-                    Spacer()
-                    Image(systemName: "gear")
-                        .foregroundColor(.gray)
-                    
-                }
-                .padding()
-                .padding(.horizontal, 20)
-                .background(Color(.secondarySystemBackground).opacity(0.1))
+                
+              
             }
+            
         }
     }
 }
@@ -131,7 +121,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environment(\.colorScheme, .dark)
+        //            .preferredColorScheme(.dark)
     }
 }
 

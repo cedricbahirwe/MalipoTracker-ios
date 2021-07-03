@@ -10,11 +10,9 @@ import SwiftUI
 
 struct TestingView: View {
     var body: some View {
-        
         VStack {
             EmptyView()
         }
-        
     }
 }
 
