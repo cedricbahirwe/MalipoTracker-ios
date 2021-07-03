@@ -8,9 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedtab: MainTab = .home
     
     var body: some View {
-        HomeView()
+        VStack(spacing: 0) {
+            VStack {
+                if selectedtab == .home {
+                    HomeView()
+                } else if selectedtab == .summary {
+                    SummaryView()
+                }
+            }
+            .transition(AnyTransition.move(edge: .trailing))
+            .animation(.default)
+            HStack {
+                Image(systemName: "house.fill")
+                    .imageScale(.large)
+                    .onTapGesture {
+                        selectedtab = .home
+                    }
+                Spacer()
+                
+                
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .frame(width: selectedtab == .home ? 40 : 30,
+                           height: selectedtab == .home ? 40 : 30)
+                    .onTapGesture {
+//                        selectedtab = .creation
+                    }
+                
+                Spacer()
+                Image(systemName: "chart.bar.xaxis")
+                    .imageScale(.large)
+                    .onTapGesture {
+                        selectedtab = .summary
+                    }
+                
+            }
+            .padding()
+            .padding(.horizontal, 20)
+            .background(Color(.secondarySystemGroupedBackground))
+            .clipShape(Capsule())
+            .animation(.spring())
+            .padding(10)
+        }
     }
 }
 

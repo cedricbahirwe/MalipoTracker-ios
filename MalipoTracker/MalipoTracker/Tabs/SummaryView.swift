@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SummaryView: View {
     @State private var showFullHistoryView: Bool = false
+    @Namespace var animateButton
     var body: some View {
         VStack {
             ZStack(alignment: .trailing) {
@@ -38,6 +39,10 @@ struct SummaryView: View {
                     .background(Color.green.contrast(0.6))
                     .foregroundColor(.white)
                     .cornerRadius(3)
+                if showFullHistoryView {
+                    Spacer()
+                    expandButton
+                }
             }
             .padding(.horizontal)
             Divider()
@@ -56,28 +61,17 @@ struct SummaryView: View {
                     , alignment: .topTrailing
                 )
                 .opacity(showFullHistoryView ? 0 : 1)
-//                .background(Color.secondary)
+
                 VStack {
                     Spacer()
                         .frame(height: showFullHistoryView ? 0 : 320)
-                        
-                    HStack {
-                        Spacer()
-                        
-                        Image(systemName: "chevron.right.2")
-                            .imageScale(.large)
-                            .rotationEffect(
-                                .degrees(showFullHistoryView ? 90 : -90)
-                            )
-                            .onTapGesture {
-                                withAnimation(.spring()) {
-                                    showFullHistoryView.toggle()
-                                }
-                            }
-                            
-                        
+                    if showFullHistoryView == false {
+                        HStack {
+                            Spacer()
+                            expandButton
+                        }
+                        .padding(10)
                     }
-                    .padding(10)
                     ScrollView {
                         VStack {
                             ForEach([Color.red, .black, .green
@@ -93,6 +87,20 @@ struct SummaryView: View {
                 
             }
         }
+    }
+    
+    private var expandButton: some View {
+        Image(systemName: "chevron.right.2")
+            .imageScale(.large)
+            .rotationEffect(
+                .degrees(showFullHistoryView ? 90 : -90)
+            )
+            .matchedGeometryEffect(id: "expandButton", in: animateButton)
+            .onTapGesture {
+                withAnimation(.spring()) {
+                    showFullHistoryView.toggle()
+                }
+            }
     }
 }
 
