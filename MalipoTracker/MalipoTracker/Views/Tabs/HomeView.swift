@@ -7,7 +7,12 @@
 
 import SwiftUI
 
+public enum MainTab {
+    case home , summary, creation
+}
 
+/// - Payment Status
+/// - Snoozed? (Date and time)
 struct HomeView: View {
     @State private var goToEventDetails = false
     @StateObject var dateProvider: DateProvider = DateProvider()
@@ -103,29 +108,12 @@ struct HomeView: View {
                     goToEventDetails = true
                 }
                 
+                
                 Spacer()
                 
-                HStack {
-                    Image(systemName: "house.fill")
-                        .imageScale(.large)
-                    
-                    Spacer()
-                    
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                    
-                    Spacer()
-                    Image(systemName: "chart.bar.xaxis")
-                        .imageScale(.large)
-                    
-                }
-                .padding()
-                .padding(.horizontal, 20)
-                .background(Color(.secondarySystemGroupedBackground))
-                .clipShape(Capsule())
-                .padding(10)
+              
             }
+            
         }
     }
 }

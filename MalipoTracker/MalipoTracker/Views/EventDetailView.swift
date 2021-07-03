@@ -12,7 +12,7 @@ struct EventDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    let event: Event? = nil
+    let event: MTEvent? = nil
     var body: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading) {
@@ -24,6 +24,9 @@ struct EventDetailView: View {
                             .imageScale(.large)
                             .padding([.vertical, .trailing], 10)
                     })
+                    Spacer()
+                    Text("Event Detail")
+                        .bold()
                     Spacer()
                     Button(action: {}, label: {
                         Image(systemName: "gear")
@@ -166,5 +169,6 @@ struct EventDetailView: View {
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         EventDetailView()
+//            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

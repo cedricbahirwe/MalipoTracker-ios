@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct CalendarPicker: View {
-    @State private var selectedDate = Date()
+struct GraphicalCalendarView: View {
+    @Binding var selection: Date
+    var startDate: Date = Date()
+    var endDate: Date? = nil
     var body: some View {
-        
-        
-        VStack(spacing: -20) {
+        ZStack(alignment: .bottom) {
             Color.black.opacity(0.6)
                 .ignoresSafeArea(edges: .all)
-            
             VStack(spacing: 0) {
                 
                 Capsule()
                     .fill(Color.gray.opacity(0.2))
-                    .frame(width: 50, height: 5)
+                    .frame(width: 40, height: 5)
                     .padding(.vertical, 5)
                 HStack {
                     Text("Select date🗓")
@@ -29,27 +28,27 @@ struct CalendarPicker: View {
                     Spacer()
                 }
                 .padding(.vertical, 5)
-                DatePicker("", selection: $selectedDate, in: Date()..., displayedComponents: .date)
+                
+                DatePicker("",
+                           selection: $selection,
+                           in: startDate...Date(timeIntervalSinceNow: 865000),
+                           displayedComponents: .date)
                     .datePickerStyle(GraphicalDatePickerStyle())
-                    .zIndex(3)
             }
             .padding()
-
             .background(
-//                Color.fgColor
-                Color(red: 0.816, green: 0.884, blue: 0.909)
+                Color(.secondarySystemBackground)
                     .cornerRadius(20, corners: [.topLeft, .topRight])
-                    .edgesIgnoringSafeArea(.bottom)
+                    .ignoresSafeArea(.all, edges: .bottom)
             )
         }
     }
-    
 }
 
 struct CalendarPicker_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarPicker()
-        //            .environment(\.colorScheme, .dark)
+        GraphicalCalendarView(selection: .constant(Date()))
+//            .environment(\.colorScheme, .dark)
     }
 }
 
