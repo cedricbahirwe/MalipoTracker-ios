@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum MTCategory {
-    case rent ,loan , custom(String)
-}
-
 struct MTEvent: Codable, Identifiable {
     var id = UUID()
     var title: String = ""
@@ -19,7 +15,6 @@ struct MTEvent: Codable, Identifiable {
     var category: MTEventCategory
     var status: MTEventStatus
     var contact: MTContact
-    
     var customNote: String? = nil
     
     
