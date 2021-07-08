@@ -85,7 +85,7 @@ struct Calendar_View: View {
         .onChange(of: selectedMonth, perform: updateLayout)
     }
     
-    func days() -> [String] {
+    public func days() -> [String] {
         let symbols = DateFormatter().shortWeekdaySymbols!
         return Array(symbols[1..<symbols.count]) + symbols[0..<1]
     }
@@ -105,6 +105,7 @@ struct Calendar_View: View {
             }
         }
     }
+    
     private func updateLayout(tab: Month) {
         offsetX = -(width*CGFloat(tab.rawValue-1))
         //        switch tab {

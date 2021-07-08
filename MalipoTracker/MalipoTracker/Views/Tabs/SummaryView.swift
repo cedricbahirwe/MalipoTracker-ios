@@ -56,8 +56,12 @@ struct SummaryView: View {
                 .overlay(
                     
                     // To toggle between income and dus
-                    Toggle("", isOn: .constant(true))
-                        .toggleStyle(SwitchToggleStyle(tint: Color.red.opacity(0.8)))
+                    VStack(spacing: 0) {
+                        Toggle("", isOn: .constant(true))
+                            .toggleStyle(SwitchToggleStyle(tint: Color.red.opacity(0.8)))
+                        ChartView()
+                            .padding(.bottom, -35)
+                    }
                     , alignment: .topTrailing
                 )
                 .opacity(showFullHistoryView ? 0 : 1)
