@@ -1,6 +1,6 @@
 # MalipoTracker-ios
 A Simple Prototype of MalipoTracker-kotlin
 
-Home View                 |  Summary View
+Summary Graph              |  Summary View
 :-------------------------:|:-------------------------:
-![](home.png)  |  ![](summary.png)
+![](graph.png)  |  ![](summary.png)
