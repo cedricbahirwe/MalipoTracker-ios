@@ -12,6 +12,7 @@
 		8200C4A4269072BE00087CC4 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200C4A3269072BE00087CC4 /* HistoryRowView.swift */; };
 		8200C4A8269077BA00087CC4 /* Calendar View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200C4A7269077BA00087CC4 /* Calendar View.swift */; };
 		82096A78268F64240018E468 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82096A77268F64240018E468 /* DataProvider.swift */; };
+		821F623B2698DC07005D53D4 /* Italiana-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 821F623A2698DC07005D53D4 /* Italiana-Regular.ttf */; };
 		8228D7E225DF0A22003379A7 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8228D7E125DF0A22003379A7 /* CalendarPicker.swift */; };
 		823F20D2268FA0DE00EFC8F6 /* MTContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F20D1268FA0DE00EFC8F6 /* MTContact.swift */; };
 		823F20D6268FA0F400EFC8F6 /* MTEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F20D5268FA0F400EFC8F6 /* MTEvent.swift */; };
@@ -34,6 +35,7 @@
 		8200C4A3269072BE00087CC4 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
 		8200C4A7269077BA00087CC4 /* Calendar View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar View.swift"; sourceTree = "<group>"; };
 		82096A77268F64240018E468 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		821F623A2698DC07005D53D4 /* Italiana-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Italiana-Regular.ttf"; sourceTree = "<group>"; };
 		8228D7E125DF0A22003379A7 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
 		823F20D1268FA0DE00EFC8F6 /* MTContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTContact.swift; sourceTree = "<group>"; };
 		823F20D5268FA0F400EFC8F6 /* MTEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTEvent.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				82EA8C1E26908D01006E7BE0 /* Views */,
 				8228D7E125DF0A22003379A7 /* CalendarPicker.swift */,
 				8200C4A7269077BA00087CC4 /* Calendar View.swift */,
+				821F623A2698DC07005D53D4 /* Italiana-Regular.ttf */,
 				82A6471826979C41000CFE02 /* ChartView.swift */,
 				8200C49E2690729D00087CC4 /* View Helpers */,
 				823F20D0268FA0D100EFC8F6 /* Models */,
@@ -221,6 +224,7 @@
 			files = (
 				82581D6125DDBBBE006FACB3 /* Preview Assets.xcassets in Resources */,
 				82581D5E25DDBBBE006FACB3 /* Assets.xcassets in Resources */,
+				821F623B2698DC07005D53D4 /* Italiana-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
