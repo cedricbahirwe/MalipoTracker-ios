@@ -58,10 +58,12 @@ struct EventCreationView: View {
                 VStack(alignment: .leading, spacing: 15) {
                     TitleBold("Category")
                     HStack(spacing: 15) {
-                        ForEach(MTEventCategory.Base.allCases, id: \.self) { category in
+                        ForEach(MTEventCategory.Base.allCases,
+                                id: \.self) { category in
                             Text(category.rawValue.capitalized)
                                 .font(.callout)
                                 .padding(.vertical, 5)
+                                .foregroundColor(category == .loan ? Color(.systemBackground) : .primary)
                                 .frame(maxWidth: .infinity)
                                 .background(
                                     ZStack {
@@ -74,7 +76,6 @@ struct EventCreationView: View {
                                         }
                                     }
                                 )
-                                .foregroundColor(category == .loan ? Color(.systemBackground) : .primary)
                         }
                     }
                 }
