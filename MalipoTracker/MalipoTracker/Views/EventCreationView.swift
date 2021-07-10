@@ -45,7 +45,8 @@ struct EventCreationView: View {
                     TitleBold("Category")
                     HStack {
                         Text("12:11 AM, Jul 3, 2021")
-                            .font(Font.callout.weight(.medium))
+                            .font(.callout)
+                            .fontWeight(.medium)
                         Spacer()
                         Image(systemName: "calendar.circle.fill")
                             .imageScale(.large)
@@ -70,7 +71,8 @@ struct EventCreationView: View {
                                         if category != .loan {
                                             Capsule()
                                                 .stroke(Color.primary)
-                                        } else {
+                                        }
+                                        else {
                                             Capsule()
                                                 .fill(Color.primary)
                                         }
@@ -79,7 +81,6 @@ struct EventCreationView: View {
                         }
                     }
                 }
-                
                 
                 VStack(alignment: .leading, spacing: 15) {
                     TitleBold("Repetition")
