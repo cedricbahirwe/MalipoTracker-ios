@@ -97,16 +97,13 @@ struct EventCreationView: View {
                                         .foregroundColor(.white)
                                 }
                             }
-                            
                         }
                     }
                 }
-                
             }
             .foregroundColor(.secondary)
             .padding(10)
             .frame(maxWidth: .infinity, alignment: .leading)
-            
             Spacer()
         }
 //        .preferredColorScheme(.dark)

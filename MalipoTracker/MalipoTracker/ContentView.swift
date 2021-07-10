@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedtab: MainTab = .home
-    
+    @State private var showEditSheet: Bool = false
     var body: some View {
         VStack(spacing: 0) {
             VStack {
@@ -35,7 +35,7 @@ struct ContentView: View {
                     .frame(width: selectedtab == .home ? 40 : 30,
                            height: selectedtab == .home ? 40 : 30)
                     .onTapGesture {
-//                        selectedtab = .creation
+                        selectedtab = .creation
                     }
                 
                 Spacer()
@@ -53,6 +53,14 @@ struct ContentView: View {
             .animation(.spring())
             .padding(10)
         }
+        .onChange(of: selectedtab) {
+            showEditSheet = $0 == .creation
+        }
+        .sheet(isPresented: $showEditSheet, onDismiss: {
+            
+        }, content: {
+            EventCreationView()
+        })
     }
 }
 
