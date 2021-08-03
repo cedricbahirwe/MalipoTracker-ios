@@ -10,7 +10,10 @@ import SwiftUI
 struct EventCreationView: View {
     @Environment(\.presentationMode)
     private var presentationMode
+    @State private var showContactPicker = false
     
+    @State private var allContacts: [MTContact] = []
+    @State private var selectedContact: MTContact = .init(givenName: "", lastName: "", phoneNumbers: [])
     @State private var event: MTEvent = .default
     
     private var noteCount: Int {
@@ -61,11 +64,11 @@ struct EventCreationView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 12) {
                     
-//                    titleView
-//
-//                    amountView
-//
-//                    descriptionView
+                    titleView
+
+                    amountView
+
+                    descriptionView
                    
                     VStack(alignment: .leading, spacing: 10) {
                         TitleBold("Status")
@@ -124,7 +127,9 @@ struct EventCreationView: View {
                             .roundeField()
                             .contentShape(Rectangle())
                             .onTapGesture {
+                                allContacts = PhoneContacts.getAllContacts()
                                 
+                                showContactPicker.toggle()
                             }
                     }
                     
@@ -137,6 +142,9 @@ struct EventCreationView: View {
             Color(.secondarySystemBackground)
                 .ignoresSafeArea()
         )
+        .sheet(isPresented: $showContactPicker) {
+            ContactsPickerView(allContacts: allContacts, selectedContact: $selectedContact)
+        }
 //                .preferredColorScheme(.dark)
     }
     

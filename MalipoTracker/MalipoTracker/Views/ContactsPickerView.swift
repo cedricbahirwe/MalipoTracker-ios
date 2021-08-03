@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct ContactsPickerView: View {
-    @Binding var allContacts: [Contact]
-    @Binding var selectedContact: Contact
+    let allContacts: [MTContact]
+    @Binding var selectedContact: MTContact
+    
     @State private var searchQuery: String = ""
     @State private var isEditing = false
     @State private var showNumberSelection: Bool = false
+    
     @Environment(\.presentationMode)
     private var presentationMode
     
-    private var resultedContacts: [Contact] {
+    static private let defaultContact = MTContact(givenName: "", lastName: "", phoneNumbers: [])
+    
+    private var resultedContacts: [MTContact] {
         let contacts = allContacts.sorted(by: { $0.names < $1.names })
         if searchQuery.isEmpty {
             return contacts
@@ -24,6 +28,12 @@ struct ContactsPickerView: View {
             return contacts.filter({ $0.names.lowercased().contains(searchQuery.lowercased())})
         }
     }
+    
+    init(allContacts: [MTContact], selectedContact: Binding<MTContact>?) {
+        self.allContacts = allContacts
+        _selectedContact = selectedContact ?? .constant(Self.defaultContact)
+    }
+ 
     
     var body: some View {
         VStack(spacing: 8) {
@@ -103,7 +113,7 @@ struct ContactsPickerView: View {
         buttons.append(.cancel())
         return buttons
     }
-    private func manageContact(_ contact: Contact) {
+    private func manageContact(_ contact: MTContact) {
         selectedContact = contact
         if contact.phoneNumbers.count == 1 {
             presentationMode.wrappedValue.dismiss()
@@ -122,12 +132,12 @@ struct ContactsPickerView: View {
 
 struct ContactsPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsPickerView(allContacts: .constant([]), selectedContact: .constant(.example.first!))
+        ContactsPickerView(allContacts: MTContact.example, selectedContact: .constant(.example.first!))
     }
 }
 
 struct ContactRowView: View {
-    let contact: Contact
+    let contact: MTContact
     var body: some View {
         HStack {
             LinearGradient(gradient: Gradient(colors: [Color.primary, Color.secondary]), startPoint: .top, endPoint: .bottom)
@@ -160,17 +170,6 @@ enum ContactsFilter {
     case message
 }
 
-struct Contact: Identifiable, Equatable {
-    var id = UUID()
-    let givenName: String
-    let lastName: String
-    var names: String {
-        givenName + " " + lastName
-    }
-    var phoneNumbers: [String]
-    static let example: [Contact] = []
-}
-
 
 fileprivate extension String {
     var initials: String {
@@ -183,8 +182,11 @@ fileprivate extension String {
                 let second = names[1].first!
                 
                 return String(first) + String(second)
-            } else {
+            } else if names.count  == 1{
                 return String(names.first!.first!)
+            } else {
+                print(self)
+                return self
             }
         }
     }

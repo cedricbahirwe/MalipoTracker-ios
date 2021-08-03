@@ -41,15 +41,16 @@ class PhoneContacts {
         return results
     }
     
-    class func getAllContacts() -> [Contact] {
-        var resultingContacts: [Contact] = []
+    class func getAllContacts() -> [MTContact] {
+        var resultingContacts: [MTContact] = []
         let contacts = PhoneContacts.getContacts()
         
         for contact in contacts {
-            if contact.phoneNumbers.count > 0  {
+            if contact.phoneNumbers.count > 0, !(contact.givenName.isEmpty && contact.familyName.isEmpty)  {
                 let contactPhoneNumbers = contact.phoneNumbers
                 let numbers = contactPhoneNumbers.compactMap { $0.value.value(forKey: "digits") as? String }
-                let newContact = Contact(givenName: contact.givenName,
+                
+                let newContact = MTContact(givenName: contact.givenName,
                                          lastName: contact.familyName,
                                          phoneNumbers: numbers)
                 resultingContacts.append(newContact)
