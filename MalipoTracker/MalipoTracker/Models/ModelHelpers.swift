@@ -14,12 +14,12 @@ public enum MTNotificationType: String, CaseIterable, Codable {
 }
 
 // MARK: - MTNotificationType: Supported types of Status for a MTEvent in MalipoTracker
-public enum MTEventStatus: String, Codable {
+public enum MTEventStatus: String, Codable, CaseIterable {
     case completed, pending, extended, canceled
 }
 
 // MARK: - MTNotificationType: Supported types of repetition for MTEvent MalipoTracker
-public enum MTEventRepetition: String, Codable {
+public enum MTEventRepetition: String, Codable, CaseIterable {
     case daily, weekly, monthly, yearly
 }
 

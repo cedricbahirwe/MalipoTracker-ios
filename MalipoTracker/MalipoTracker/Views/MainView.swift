@@ -56,11 +56,9 @@ struct MainView: View {
         .onChange(of: selectedtab) {
             showEditSheet = $0 == .creation
         }
-        .sheet(isPresented: $showEditSheet, onDismiss: {
-            
-        }, content: {
+        .sheet(isPresented: $showEditSheet){
             EventCreationView()
-        })
+        }
     }
 }
 

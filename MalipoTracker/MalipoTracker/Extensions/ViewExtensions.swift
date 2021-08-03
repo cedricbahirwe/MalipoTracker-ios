@@ -1,11 +1,28 @@
 //
-//  Extensions.swift
+//  ViewExtensions.swift
 //  MalipoTracker
 //
-//  Created by Cédric Bahirwe on 18/02/2021.
+//  Created by Cédric Bahirwe on 03/08/2021.
 //
 
 import SwiftUI
+
+
+struct RoundedField: ViewModifier {
+    let radius: CGFloat
+    let width: CGFloat
+    let height: CGFloat
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.callout)
+            .padding(.leading)
+            .frame(height: height)
+            .frame(width: width)
+            .background(Color(.systemBackground))
+            .cornerRadius(radius)
+    }
+}
 
 struct RoundedCorner: Shape {
     
@@ -29,6 +46,17 @@ extension View {
             .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
             .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }
+    
+    func roundeField(radius: CGFloat = 12,
+                      width: CGFloat = 200,
+                      height: CGFloat = 45) -> some View {
+        
+        ModifiedContent(content: self,
+                        modifier: RoundedField(radius: radius,
+                                               width: width,
+                                               height: height))
+        
+    }
 }
 
 extension Color {
@@ -49,6 +77,6 @@ extension Color {
     static let lightShadow = Color("lightShadow")
     static let darkShadow = Color("darkShadow")
     
+    static let mainblue = Color("mainBlue")
     static let darkGray =  Color(.darkGray)
 }
-
