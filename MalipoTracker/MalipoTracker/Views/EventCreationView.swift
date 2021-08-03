@@ -45,7 +45,8 @@ struct EventCreationView: View {
                     TitleBold("Category")
                     HStack {
                         Text("12:11 AM, Jul 3, 2021")
-                            .font(Font.callout.weight(.medium))
+                            .font(.callout)
+                            .fontWeight(.medium)
                         Spacer()
                         Image(systemName: "calendar.circle.fill")
                             .imageScale(.large)
@@ -58,27 +59,28 @@ struct EventCreationView: View {
                 VStack(alignment: .leading, spacing: 15) {
                     TitleBold("Category")
                     HStack(spacing: 15) {
-                        ForEach(MTEventCategory.Base.allCases, id: \.self) { category in
+                        ForEach(MTEventCategory.Base.allCases,
+                                id: \.self) { category in
                             Text(category.rawValue.capitalized)
                                 .font(.callout)
                                 .padding(.vertical, 5)
+                                .foregroundColor(category == .loan ? Color(.systemBackground) : .primary)
                                 .frame(maxWidth: .infinity)
                                 .background(
                                     ZStack {
                                         if category != .loan {
                                             Capsule()
                                                 .stroke(Color.primary)
-                                        } else {
+                                        }
+                                        else {
                                             Capsule()
                                                 .fill(Color.primary)
                                         }
                                     }
                                 )
-                                .foregroundColor(category == .loan ? Color(.systemBackground) : .primary)
                         }
                     }
                 }
-                
                 
                 VStack(alignment: .leading, spacing: 15) {
                     TitleBold("Repetition")
@@ -95,16 +97,13 @@ struct EventCreationView: View {
                                         .foregroundColor(.white)
                                 }
                             }
-                            
                         }
                     }
                 }
-                
             }
             .foregroundColor(.secondary)
             .padding(10)
             .frame(maxWidth: .infinity, alignment: .leading)
-            
             Spacer()
         }
 //        .preferredColorScheme(.dark)
