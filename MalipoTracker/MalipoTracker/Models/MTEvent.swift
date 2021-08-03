@@ -20,13 +20,13 @@ public struct MTEvent: Codable, Identifiable {
     var dueTime: Date = Date() // This will be time format only
     
     var repetition: MTEventRepetition
-    var category: MTEventCategory
+    var category: MTEventCategory.Base
+    var notificationTypes: [MTNotificationType]
+
     var contact: MTContact
     var updatedAt: Date = Date()
-    
     private var createdAt: Date = Date()
     
-    var notificationTypes: [MTNotificationType]
     
     var formattedCreatedAt: String { createdAt.description }
     var formattedUpdatedAt: String { updatedAt.description }
@@ -36,6 +36,5 @@ public struct MTEvent: Codable, Identifiable {
                                     status: .pending,
                                     repetition: .weekly,
                                     category: .rent,
-                                    contact: .default,
-                                    notificationTypes: [.sms])
+                                    notificationTypes: [.sms], contact: .default)
 }

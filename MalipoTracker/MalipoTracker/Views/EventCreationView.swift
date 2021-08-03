@@ -97,8 +97,6 @@ struct EventCreationView: View {
                         Picker("", selection: $event.repetition) {
                             ForEach(MTEventRepetition.allCases, id:\.self) { status in
                                 Text(status.rawValue.capitalized)
-                                    .font(.caption)
-                                
                             }
                         }
                         .labelsHidden()
@@ -108,57 +106,28 @@ struct EventCreationView: View {
                     
                     VStack(alignment: .leading) {
                         TitleBold("Category")
-//                        Pic
-//                        Picker("", selection: $event.category) {
-//                            ForEach(MTEventCategory.allCases, id:\.self) { status in
-//                                Text(status.rawValue.capitalized)
-//                                    .font(.caption)
-//
-//                            }
-//                        }
-//                        .labelsHidden()
-//                        .pickerStyle(SegmentedPickerStyle())
-                        
-                        ForEach(MTEventCategory.Base.allCases,
-                                id: \.self) { category in
-                            Text(category.rawValue.capitalized)
-                                .font(.callout)
-                                .padding(.vertical, 5)
-                                .foregroundColor(category == .loan ? Color(.systemBackground) : .primary)
-                                .frame(maxWidth: .infinity)
-                                .background(
-                                    ZStack {
-                                        if category != .loan {
-                                            Capsule()
-                                                .stroke(Color.primary)
-                                        }
-                                        else {
-                                            Capsule()
-                                                .fill(Color.primary)
-                                        }
-                                    }
-                                )
+                        Picker("", selection: $event.category) {
+                            ForEach(MTEventCategory.Base.allCases, id:\.self) { category in
+                                Text(category.rawValue.capitalized)
+                                
+                            }
                         }
+                        .labelsHidden()
+                        .pickerStyle(SegmentedPickerStyle())
                     }
                     
-                    //                VStack(alignment: .leading, spacing: 15) {
-                    //                    TitleBold("Repetition")
-                    //                    HStack {
-                    //                        ForEach([Color.red, .green, .yellow, .purple, .orange],
-                    //                                id:\.self) { color in
-                    //                            ZStack {
-                    //                                color
-                    //                                    .frame(width: 30, height: 30)
-                    //                                    .clipShape(Circle())
-                    //                                if  color == .red  {
-                    //                                    Image(systemName: "checkmark")
-                    //                                        .imageScale(.small)
-                    //                                        .foregroundColor(.white)
-                    //                                }
-                    //                            }
-                    //                        }
-                    //                    }
-                    //                }
+                    
+                    HStack {
+                        TitleBold("Contact")
+                        Spacer()
+                        Text("Contact")
+                            .roundeField()
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                
+                            }
+                    }
+                    
                 }
                 .padding(12)
             }
@@ -168,7 +137,7 @@ struct EventCreationView: View {
             Color(.secondarySystemBackground)
                 .ignoresSafeArea()
         )
-        //        .preferredColorScheme(.dark)
+//                .preferredColorScheme(.dark)
     }
     
     @ViewBuilder
@@ -176,16 +145,6 @@ struct EventCreationView: View {
         Text(value).fontWeight(.medium)
     }
     
-    @ViewBuilder
-    func field(value: Binding<String>) -> some View {
-        TextField(value.wrappedValue, text: value)
-            .font(.callout)
-            .padding(.leading)
-            .frame(height: 45)
-            .frame(width: 200)
-            .background(Color(.systemBackground))
-            .cornerRadius(12)
-    }
 }
 
 

@@ -30,6 +30,8 @@
 		82A6471926979C41000CFE02 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6471826979C41000CFE02 /* ChartView.swift */; };
 		82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7A82625DDC6BB0058AA22 /* HomeView.swift */; };
 		82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B7A82E25DDD6220058AA22 /* EventDetailView.swift */; };
+		82C50CC126B99A99001A64DB /* ContactsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C50CC026B99A99001A64DB /* ContactsPickerView.swift */; };
+		82C50CC526B99AD8001A64DB /* ContactsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C50CC426B99AD8001A64DB /* ContactsFetcher.swift */; };
 		82EA8C2026908D17006E7BE0 /* EventCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EA8C1F26908D17006E7BE0 /* EventCreationView.swift */; };
 		82F0D32E26A76A740001FBBB /* CapsuleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0D32D26A76A740001FBBB /* CapsuleGraphView.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		82A6471826979C41000CFE02 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		82B7A82625DDC6BB0058AA22 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		82B7A82E25DDD6220058AA22 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		82C50CC026B99A99001A64DB /* ContactsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPickerView.swift; sourceTree = "<group>"; };
+		82C50CC426B99AD8001A64DB /* ContactsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFetcher.swift; sourceTree = "<group>"; };
 		82EA8C1F26908D17006E7BE0 /* EventCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationView.swift; sourceTree = "<group>"; };
 		82F0D32D26A76A740001FBBB /* CapsuleGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				8222BF4326B9835400CF54B0 /* ViewExtensions.swift */,
+				82C50CC426B99AD8001A64DB /* ContactsFetcher.swift */,
 				821F624B2698DFD1005D53D4 /* Fonts_Extensions.swift */,
 			);
 			path = Extensions;
@@ -182,6 +187,7 @@
 				8228D7E125DF0A22003379A7 /* CalendarPicker.swift */,
 				8200C4A7269077BA00087CC4 /* Calendar View.swift */,
 				8253E49D26B95A2D004B9A09 /* MyCalendarView.swift */,
+				82C50CC026B99A99001A64DB /* ContactsPickerView.swift */,
 				8253E4A226B9668B004B9A09 /* SubViews */,
 				823F20C7268F915700EFC8F6 /* Tabs */,
 			);
@@ -275,6 +281,7 @@
 				82F0D32E26A76A740001FBBB /* CapsuleGraphView.swift in Sources */,
 				82B7A82F25DDD6220058AA22 /* EventDetailView.swift in Sources */,
 				823F20D6268FA0F400EFC8F6 /* MTEvent.swift in Sources */,
+				82C50CC526B99AD8001A64DB /* ContactsFetcher.swift in Sources */,
 				82B7A82725DDC6BB0058AA22 /* HomeView.swift in Sources */,
 				823F20D2268FA0DE00EFC8F6 /* MTContact.swift in Sources */,
 				8200C4A8269077BA00087CC4 /* Calendar View.swift in Sources */,
@@ -288,6 +295,7 @@
 				82581D5C25DDBBBD006FACB3 /* ContentView.swift in Sources */,
 				82581D5A25DDBBBD006FACB3 /* MalipoTrackerApp.swift in Sources */,
 				8228D7E225DF0A22003379A7 /* CalendarPicker.swift in Sources */,
+				82C50CC126B99A99001A64DB /* ContactsPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ struct RoundedField: ViewModifier {
             .font(.callout)
             .padding(.leading)
             .frame(height: height)
-            .frame(width: width)
+            .frame(width: width ,alignment: .leading)
             .background(Color(.systemBackground))
             .cornerRadius(radius)
     }
@@ -80,3 +80,12 @@ extension Color {
     static let mainblue = Color("mainBlue")
     static let darkGray =  Color(.darkGray)
 }
+
+/// Dismiss keyboard
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif

@@ -50,5 +50,7 @@
 	<array>
 		<string>Italiana-Regular.ttf</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string> MalipoTracker needs access your Contacts list to provide better user experience </string>
 </dict>
 </plist>
