@@ -9,7 +9,10 @@ import Foundation
 
 /// Encoding and Decoding Enums with Associated Values Using Codable
 /// https://medium.com/@fruitcoder/codable-enum-with-associated-values-swift-4-e7d75d6f4370
-public enum MTEventCategory: Equatable {
+
+// MARK: - MTEventCategory: A Contact associated with an MTEvent
+public enum MTEventCategory {
+
     case rent , loan , custom(message: String)
     public static var allCases: [MTEventCategory] {
             return [.rent, .loan, .custom(message: "Custom")]

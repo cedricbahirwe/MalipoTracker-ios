@@ -7,12 +7,23 @@
 
 import Foundation
 
-enum MTEventStatus: String, Codable {
+
+// MARK: - MTNotificationType: Supported type of notifications in MalipoTracker
+public enum MTNotificationType: String, CaseIterable, Codable {
+    case sms, email, whatsapp
+}
+
+// MARK: - MTNotificationType: Supported types of Status for a MTEvent in MalipoTracker
+public enum MTEventStatus: String, Codable, CaseIterable {
     case completed, pending, extended, canceled
 }
-enum MTEventRepetition: String, Codable {
+
+// MARK: - MTNotificationType: Supported types of repetition for MTEvent MalipoTracker
+public enum MTEventRepetition: String, Codable, CaseIterable {
     case daily, weekly, monthly, yearly
 }
-enum Month: Int {
+
+// MARK: - MTMonth: Supported months MalipoTracker
+public enum MTMonth: Int {
     case jan = 1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
 }

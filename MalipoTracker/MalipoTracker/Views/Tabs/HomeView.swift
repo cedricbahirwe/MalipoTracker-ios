@@ -16,7 +16,7 @@ public enum MainTab {
 struct HomeView: View {
     @StateObject private var data: DateProvider = DateProvider()
     @State private var goToEventDetails = false
-    @State private var currentMonth: Month = .jul
+    @State private var currentMonth: MTMonth = .jul
     var body: some View {
         ZStack {
             Group {
