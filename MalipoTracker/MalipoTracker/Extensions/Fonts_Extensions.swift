@@ -12,11 +12,14 @@ enum CustomFont: String {
 }
 
 extension Font {
-    static func italiana(_ name: CustomFont = .regular, _ size: CGFloat) -> Font {
+    static func italiana(_ name: CustomFont = .regular,
+                         _ size: CGFloat) -> Font {
         Font.custom(name.rawValue, size: size)
     }
     
-    static func italiana(_ name: CustomFont = .regular, _ size: CGFloat, relativeTo: TextStyle) -> Font {
+    static func italiana(_ name: CustomFont = .regular,
+                         _ size: CGFloat,
+                         relativeTo: TextStyle) -> Font {
         Font.custom(name.rawValue, size: size, relativeTo: relativeTo)
     }
 }

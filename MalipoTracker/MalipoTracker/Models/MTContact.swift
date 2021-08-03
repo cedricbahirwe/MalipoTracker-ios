@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - MTContact: A Contact associated with an MTEvent
 struct MTContact: Identifiable, Codable {
     var id = UUID()
     let name: String
