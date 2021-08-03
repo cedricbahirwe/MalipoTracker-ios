@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.calendar) var calendar
     
-    private var year: DateInterval {
-        calendar.dateInterval(of: .year, for: Date())!
-    }
     var body: some View {
-        CalendarContainerView()
+        MainView()
     }
     
 }
