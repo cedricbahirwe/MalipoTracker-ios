@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let size = UIScreen.main.bounds.size
+public let size = UIScreen.main.bounds.size
 struct EventDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
@@ -64,16 +64,15 @@ struct EventDetailView: View {
                 }
             )
             
-            
             VStack {
                 HStack {
                     Image("1")
                         .resizable()
                         .frame(width: 40, height: 40)
                         .cornerRadius(5)
-                    VStack(alignment: .leading, spacing: 0) {
+                    VStack(alignment: .leading, spacing: 3) {
                         Text("Cédric Bahirwe")
-                            .font(.system(size: 13, weight: .medium))
+                            .font(.system(size: 14, weight: .medium))
                         Text("5 hours ago")
                             .font(.system(size: 12, weight: .light))
                             .foregroundColor(.gray)
@@ -134,7 +133,7 @@ struct EventDetailView: View {
                             .fontWeight(.medium)
                         
                         HStack {
-                            ForEach(0 ..< 5) { i in
+                            ForEach(0 ..< 4) { i in
                                 Image("\(i+1)")
                                     .resizable()
                                     .frame(width: 35, height: 35)
@@ -169,6 +168,6 @@ struct EventDetailView: View {
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
         EventDetailView()
-//            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.dark)
     }
 }

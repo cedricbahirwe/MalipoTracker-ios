@@ -38,5 +38,7 @@ struct HistoryRowView: View {
 struct HistoryRowView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryRowView(bgColor: .black)
+            .padding(10)
+            .previewLayout(.fixed(width: 400, height: 130))
     }
 }

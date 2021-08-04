@@ -7,39 +7,34 @@
 
 import Foundation
 
-public enum MTNotfication: String, CaseIterable, Codable {
-    case sms, email, whatsapp
-}
-
-struct MTEvent: Codable, Identifiable {
-    var id = UUID()
-    var title: String = ""
-    var montant: Double
-    var repetition: MTEventRepetition
-    var category: MTEventCategory
+// MARK: - MTEvent: An internal MalipoTracker event.
+// Field are ordered based on high level importance
+public struct MTEvent: Codable, Identifiable {
+    public var id = UUID()
+    var title: String
+    var amount: Double
     var status: MTEventStatus
-    var contact: MTContact
     var customNote: String? = nil
     
-    
-    private var createdAt: Date = Date()
-    var updatedAt: Date = Date()
     var dueDate: Date = Date(timeIntervalSinceNow: 604800) // A week in seconds
-    var dueTime: Date = Date() // This will be time only
-    var notificationModes: [MTNotfication]
+    var dueTime: Date = Date() // This will be time format only
     
-    var formattedCreatedAt: String {
-        return createdAt.description
-    }
+    var repetition: MTEventRepetition
+    var category: MTEventCategory.Base
+    var notificationTypes: [MTNotificationType]
+
+    var contact: MTContact
+    var updatedAt: Date = Date()
+    private var createdAt: Date = Date()
     
-    var formattedUpdatedAt: String {
-        return updatedAt.description
-    }
     
-    static let `default`  = MTEvent(montant: 2000,
+    var formattedCreatedAt: String { createdAt.description }
+    var formattedUpdatedAt: String { updatedAt.description }
+    
+    static let `default`  = MTEvent(title: "",
+                                    amount: 2000,
+                                    status: .pending,
                                     repetition: .weekly,
                                     category: .rent,
-                                    status: .pending,
-                                    contact: .default,
-                                    customNote: "The is monthly rent for Himbi Apartments", notificationModes: [.sms])
+                                    notificationTypes: [.sms], contact: .default)
 }

@@ -14,16 +14,16 @@ public enum MainTab {
 /// - Payment Status
 /// - Snoozed? (Date and time)
 struct HomeView: View {
+    @StateObject private var data: DateProvider = DateProvider()
     @State private var goToEventDetails = false
-    @StateObject var dateProvider: DateProvider = DateProvider()
-    @State private var currentMonth: Month = .jul
+    @State private var currentMonth: MTMonth = .jul
     var body: some View {
         ZStack {
             Group {
                 NavigationLink(destination: EventDetailView(), isActive: $goToEventDetails) { }
             }
             VStack {
-                HStack {
+                HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Hello, Cédric")
                             .font(.system(size: 16, weight: .semibold))
@@ -55,10 +55,10 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(1 ..< dateProvider.getNumbersOfMonths(month: currentMonth.rawValue, year: 2021)) { index in
+                        ForEach(1 ..< data.getNumbersOfMonths(month: currentMonth.rawValue, year: 2021)) { index in
                             VStack {
                                 
-                                Text(dateProvider.getDayName(month: currentMonth.rawValue, day: index))
+                                Text(data.getDayName(month: currentMonth.rawValue, day: index))
                                     .font(.system(size: 12, weight: .light))
                                     .foregroundColor(Color(.secondaryLabel))
                                 Text("\(index)")

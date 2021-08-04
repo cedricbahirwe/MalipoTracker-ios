@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Calendar_View: View {
-    @State var selectedMonth: Month = .jul
+    @State var selectedMonth: MTMonth = .jul
     private let width = UIScreen.main.bounds.size.width
     
     //    @State var data: DateType = DateType.init()
@@ -94,19 +94,19 @@ struct Calendar_View: View {
         print("Saping")
         if (-swipeValue.translation.width > 50)  {
             
-            if let newMonth = Month(rawValue: selectedMonth.rawValue+1) {
+            if let newMonth = MTMonth(rawValue: selectedMonth.rawValue+1) {
                 selectedMonth = newMonth
             }
         }
         
         if (swipeValue.translation.width > 50) {
-            if let newMonth = Month(rawValue: selectedMonth.rawValue-1) {
+            if let newMonth = MTMonth(rawValue: selectedMonth.rawValue-1) {
                 selectedMonth = newMonth
             }
         }
     }
     
-    private func updateLayout(tab: Month) {
+    private func updateLayout(tab: MTMonth) {
         offsetX = -(width*CGFloat(tab.rawValue-1))
         //        switch tab {
         //        case .foryou:
