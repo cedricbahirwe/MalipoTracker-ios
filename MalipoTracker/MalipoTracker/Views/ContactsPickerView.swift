@@ -30,8 +30,13 @@ struct ContactsPickerView: View {
     }
     
     init(contacts: Binding<[MTContact]>, selection: Binding<MTContact?>) {
-        self._allContacts = contacts
+        _allContacts = contacts
         _selectedContact = Binding(selection) ?? .constant(Self.defaultContact)
+    }
+    
+    init(contacts: Binding<[MTContact]>, selection: Binding<MTContact>) {
+        _allContacts = contacts
+        _selectedContact = selection
     }
  
     

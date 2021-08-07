@@ -36,6 +36,7 @@
 		82F0D32E26A76A740001FBBB /* CapsuleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0D32D26A76A740001FBBB /* CapsuleGraphView.swift */; };
 		82F4CE3826BF044400CE9C91 /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4CE3726BF044400CE9C91 /* BindingExtensions.swift */; };
 		82F4CE3A26BF0FEC00CE9C91 /* LocalStorePropertWapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4CE3926BF0FEC00CE9C91 /* LocalStorePropertWapper.swift */; };
+		82F4CE3D26BF116C00CE9C91 /* EventStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4CE3C26BF116C00CE9C91 /* EventStoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		82F0D32D26A76A740001FBBB /* CapsuleGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleGraphView.swift; sourceTree = "<group>"; };
 		82F4CE3726BF044400CE9C91 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
 		82F4CE3926BF0FEC00CE9C91 /* LocalStorePropertWapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorePropertWapper.swift; sourceTree = "<group>"; };
+		82F4CE3C26BF116C00CE9C91 /* EventStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +152,9 @@
 				82581D5925DDBBBD006FACB3 /* MalipoTrackerApp.swift */,
 				82581D5B25DDBBBD006FACB3 /* ContentView.swift */,
 				82EA8C1E26908D01006E7BE0 /* Views */,
-				8200C49E2690729D00087CC4 /* CustomViews Helper */,
 				823F20D0268FA0D100EFC8F6 /* Models */,
+				82F4CE3B26BF114D00CE9C91 /* ViewModels */,
+				8200C49E2690729D00087CC4 /* CustomViews Helper */,
 				82096A76268F64160018E468 /* ViewModel */,
 				82EA8C1926908762006E7BE0 /* Extensions */,
 				82F7E1D626B97ADA00156913 /* Fonts */,
@@ -198,6 +201,14 @@
 				823F20C7268F915700EFC8F6 /* Tabs */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		82F4CE3B26BF114D00CE9C91 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				82F4CE3C26BF116C00CE9C91 /* EventStoreManager.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		82F7E1D626B97ADA00156913 /* Fonts */ = {
@@ -295,6 +306,7 @@
 				82A6471926979C41000CFE02 /* ChartView.swift in Sources */,
 				82096A78268F64240018E468 /* DataProvider.swift in Sources */,
 				8200C49B269067AD00087CC4 /* SummaryView.swift in Sources */,
+				82F4CE3D26BF116C00CE9C91 /* EventStoreManager.swift in Sources */,
 				8222BF4426B9835400CF54B0 /* ViewExtensions.swift in Sources */,
 				8253E49E26B95A2D004B9A09 /* MyCalendarView.swift in Sources */,
 				8200C4A0269072AD00087CC4 /* GraphAxis.swift in Sources */,

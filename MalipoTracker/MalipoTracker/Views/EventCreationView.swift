@@ -8,17 +8,12 @@
 import SwiftUI
 
 struct EventCreationView: View {
-    @Environment(\.presentationMode)
-    private var presentationMode
+    @Binding var isPresented: Bool
     @State private var showContactPicker = false
     
-    
-    
-//    @AppStorage("firstEvent", store: UserDefaults.standard)
-//    private var myFirstEvent: MTEvent?
-    
+    @StateObject var eventSM = EventStoreManager()
+
     @State private var allContacts: [MTContact] = []
-    @State private var selectedContact: MTContact? = nil
     @State private var event: MTEvent = .default
     
     private var noteCount: Int {
@@ -142,13 +137,27 @@ struct EventCreationView: View {
                                 if allContacts.isEmpty { return }
                                 showContactPicker.toggle()
                             }
-                            
                     }
+                    .padding(.vertical, 10)
                     .sheet(isPresented: $showContactPicker) {
                         ContactsPickerView(contacts: $allContacts,
-                                           selection: $selectedContact)
+                                           selection: $event.contact)
                     }
                     
+                    
+                    
+                    Button(action: {
+                        eventSM.myFirstEvent = event
+                        isPresented = false
+                    }) {
+                        Text("Done")
+                            .bold()
+                            .foregroundColor(Color(.systemBackground))
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 48)
+                            .background(Color.primary)
+                            .cornerRadius(10)
+                    }
                 }
                 .padding(12)
             }
@@ -172,7 +181,7 @@ struct EventCreationView: View {
 
 struct EventCreationView_Previews: PreviewProvider {
     static var previews: some View {
-        EventCreationView()
+        EventCreationView(isPresented: .constant(false))
     }
 }
 
@@ -180,7 +189,7 @@ extension EventCreationView {
     var topheader: some View {
         HStack {
             Button(action: {
-                presentationMode.wrappedValue.dismiss()
+                isPresented = false
             }, label: {
                 Image(systemName: "chevron.left")
                     .imageScale(.large)
