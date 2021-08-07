@@ -35,6 +35,7 @@
 		82EA8C2026908D17006E7BE0 /* EventCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EA8C1F26908D17006E7BE0 /* EventCreationView.swift */; };
 		82F0D32E26A76A740001FBBB /* CapsuleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0D32D26A76A740001FBBB /* CapsuleGraphView.swift */; };
 		82F4CE3826BF044400CE9C91 /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4CE3726BF044400CE9C91 /* BindingExtensions.swift */; };
+		82F4CE3A26BF0FEC00CE9C91 /* LocalStorePropertWapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4CE3926BF0FEC00CE9C91 /* LocalStorePropertWapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		82EA8C1F26908D17006E7BE0 /* EventCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationView.swift; sourceTree = "<group>"; };
 		82F0D32D26A76A740001FBBB /* CapsuleGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleGraphView.swift; sourceTree = "<group>"; };
 		82F4CE3726BF044400CE9C91 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
+		82F4CE3926BF0FEC00CE9C91 /* LocalStorePropertWapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorePropertWapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				8222BF4326B9835400CF54B0 /* ViewExtensions.swift */,
+				82F4CE3926BF0FEC00CE9C91 /* LocalStorePropertWapper.swift */,
 				82F4CE3726BF044400CE9C91 /* BindingExtensions.swift */,
 				82C50CC426B99AD8001A64DB /* ContactsFetcher.swift */,
 				821F624B2698DFD1005D53D4 /* Fonts_Extensions.swift */,
@@ -300,6 +303,7 @@
 				82581D5A25DDBBBD006FACB3 /* MalipoTrackerApp.swift in Sources */,
 				8228D7E225DF0A22003379A7 /* CalendarPicker.swift in Sources */,
 				82C50CC126B99A99001A64DB /* ContactsPickerView.swift in Sources */,
+				82F4CE3A26BF0FEC00CE9C91 /* LocalStorePropertWapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

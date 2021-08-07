@@ -12,8 +12,13 @@ struct EventCreationView: View {
     private var presentationMode
     @State private var showContactPicker = false
     
+    
+    
+//    @AppStorage("firstEvent", store: UserDefaults.standard)
+//    private var myFirstEvent: MTEvent?
+    
     @State private var allContacts: [MTContact] = []
-    @State private var selectedContact: MTContact? = .init(givenName: "", lastName: "", phoneNumbers: [])
+    @State private var selectedContact: MTContact? = nil
     @State private var event: MTEvent = .default
     
     private var noteCount: Int {
