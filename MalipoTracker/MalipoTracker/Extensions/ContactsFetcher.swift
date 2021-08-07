@@ -10,6 +10,8 @@ import Contacts
 
 class PhoneContacts {
     
+    private init(){ }
+    
     class private func getContacts(filter: ContactsFilter = .none) -> [CNContact] {
         
         let contactStore = CNContactStore()

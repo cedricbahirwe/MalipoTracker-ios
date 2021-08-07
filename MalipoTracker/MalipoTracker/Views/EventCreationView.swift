@@ -12,8 +12,13 @@ struct EventCreationView: View {
     private var presentationMode
     @State private var showContactPicker = false
     
+    
+    
+//    @AppStorage("firstEvent", store: UserDefaults.standard)
+//    private var myFirstEvent: MTEvent?
+    
     @State private var allContacts: [MTContact] = []
-    @State private var selectedContact: MTContact = .init(givenName: "", lastName: "", phoneNumbers: [])
+    @State private var selectedContact: MTContact? = nil
     @State private var event: MTEvent = .default
     
     private var noteCount: Int {
@@ -34,7 +39,9 @@ struct EventCreationView: View {
             TitleBold("Amount(CDF)")
             Spacer()
             TextField("Amount", text: $event.amount.toBindable)
-                
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+                .keyboardType(.numbersAndPunctuation)
                 .roundeField()
         }
     }
@@ -43,7 +50,7 @@ struct EventCreationView: View {
         VStack(alignment: .leading) {
             TitleBold("Description")
             TextEditor(text: Binding(get: { event.customNote ?? "" },
-                                     set: { event.customNote = $0}))
+                                     set: descriptionHandler))
                 .padding(8)
                 .frame(height: 100)
                 .background(Color(.systemBackground))
@@ -56,6 +63,12 @@ struct EventCreationView: View {
             }
             .foregroundColor(.secondary)
             
+        }
+    }
+    
+    private func descriptionHandler(_ text: String) {
+        if text.count <= 140 {
+            event.customNote = text
         }
     }
     var body: some View {
@@ -83,8 +96,6 @@ struct EventCreationView: View {
                         .labelsHidden()
                         .pickerStyle(SegmentedPickerStyle())
                     }
-                    
-                   
                     
                     VStack(spacing: 15) {
                         DatePicker("Due Date",
@@ -128,9 +139,14 @@ struct EventCreationView: View {
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 allContacts = PhoneContacts.getAllContacts()
-                                
+                                if allContacts.isEmpty { return }
                                 showContactPicker.toggle()
                             }
+                            
+                    }
+                    .sheet(isPresented: $showContactPicker) {
+                        ContactsPickerView(contacts: $allContacts,
+                                           selection: $selectedContact)
                     }
                     
                 }
@@ -142,9 +158,7 @@ struct EventCreationView: View {
             Color(.secondarySystemBackground)
                 .ignoresSafeArea()
         )
-        .sheet(isPresented: $showContactPicker) {
-            ContactsPickerView(allContacts: allContacts, selectedContact: $selectedContact)
-        }
+        
 //                .preferredColorScheme(.dark)
     }
     
