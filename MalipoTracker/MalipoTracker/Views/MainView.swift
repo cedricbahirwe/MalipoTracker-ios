@@ -57,7 +57,7 @@ struct MainView: View {
             showEditSheet = $0 == .creation
         }
         .sheet(isPresented: $showEditSheet){
-            EventCreationView()
+            EventCreationView(isPresented: $showEditSheet)
         }
     }
 }
