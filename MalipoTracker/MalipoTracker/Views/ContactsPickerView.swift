@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactsPickerView: View {
-    let allContacts: [MTContact]
+    @Binding var allContacts: [MTContact]
     @Binding var selectedContact: MTContact
     
     @State private var searchQuery: String = ""
@@ -29,9 +29,9 @@ struct ContactsPickerView: View {
         }
     }
     
-    init(allContacts: [MTContact], selectedContact: Binding<MTContact>?) {
-        self.allContacts = allContacts
-        _selectedContact = selectedContact ?? .constant(Self.defaultContact)
+    init(contacts: Binding<[MTContact]>, selection: Binding<MTContact?>) {
+        self._allContacts = contacts
+        _selectedContact = Binding(selection) ?? .constant(Self.defaultContact)
     }
  
     
@@ -130,11 +130,12 @@ struct ContactsPickerView: View {
 
 
 
-struct ContactsPickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactsPickerView(allContacts: MTContact.example, selectedContact: .constant(.example.first!))
-    }
-}
+//struct ContactsPickerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContactsPickerView(contacts: MTContact.example,
+//                           selection: .constant(.example.first!))
+//    }
+//}
 
 struct ContactRowView: View {
     let contact: MTContact
